@@ -2,14 +2,14 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "gitlearned",
+    "database": "git_sum_education",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
-    "database": "testdb",
+    "password": "root",
+    "database": "git_sum_education",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false

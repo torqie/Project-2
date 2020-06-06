@@ -1,32 +1,38 @@
-var db = require("../models");
+const db = require('../models');
 
-module.exports = function(app) {
-
+module.exports = (app, passport) => {
   // Authentication Routes
   // =============================================================
 
-  app.post('/login', passport)
+  app.post('/api/login', passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/',
+    failureFlash: true,
+  }));
 
-
+  app.get('/api/logout', (req, res) => {
+    req.logout();
+    res.redirect('/');
+  });
 
 
   // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+  app.get('/api/examples', (req, res) => {
+    db.Example.findAll({}).then((dbExamples) => {
       res.json(dbExamples);
     });
   });
 
   // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
+  app.post('/api/examples', (req, res) => {
+    db.Example.create(req.body).then((dbExample) => {
       res.json(dbExample);
     });
   });
 
   // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
+  app.delete('/api/examples/:id', (req, res) => {
+    db.Example.destroy({ where: { id: req.params.id } }).then((dbExample) => {
       res.json(dbExample);
     });
   });
