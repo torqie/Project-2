@@ -1,0 +1,27 @@
+<div id="auth-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <form action="/api/login" method="post">
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" class="form-control" required>
+          </div>
+
+          <div class="form-group float-right mb-0">
+            <button type="submit" class="btn btn-accent">Login</button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer justify-content-center bg-gradient-light">
+        <a href="#">Forgot Password?</a> | <a href="#">Register</a>
+      </div>
+    </div>
+  </div>
+</div>
