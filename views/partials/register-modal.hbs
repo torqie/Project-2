@@ -1,0 +1,43 @@
+<div id="register-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <form action="/api/register" method="post">
+          <div class="form-group">
+            <label for="email">First Name:</label>
+            <input type="text" id="firstName" name="firstName" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label for="password_confirm">Confirm Password:</label>
+            <input type="password" id="password_confirm" name="password_confirm" class="form-control" required>
+          </div>
+
+          <div class="form-group float-right mb-0">
+            <button type="submit" class="btn btn-accent">Register</button>
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer justify-content-center bg-gradient-light">
+        Already have an account? <a href="#">Login Here</a>
+      </div>
+    </div>
+  </div>
+</div>

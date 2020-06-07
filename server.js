@@ -33,6 +33,7 @@ app.set('view engine', 'hbs');
 app.use(session({ secret: 'tmNabHUTjPyAiJIIXlHOZLVNGM' }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 require('./config/passport');
 
