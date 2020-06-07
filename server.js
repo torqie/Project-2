@@ -1,12 +1,13 @@
 require('dotenv').config();
 const express = require('express');
 const exphbs = require('express-handlebars');
-const passport = require('passport');
-const flash = require('connect-flash');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
-
+const passport = require('passport');
+const flash = require('connect-flash');
 const db = require('./models');
+const path = require('path');
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -19,10 +20,16 @@ app.use(cookieParser());
 
 
 // Handlebars
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
-app.set('view engine', 'handlebars');
+app.engine('hbs', exphbs({
+  extname: 'hbs',
+  defaultLayout: 'main',
+  layoutsDir: path.join(__dirname, 'views/layouts'),
+  partialsDir: path.join(__dirname, 'views/partials'),
+}));
 
+app.set('view engine', 'hbs');
 
+// Passport.js Authentication
 app.use(session({ secret: 'tmNabHUTjPyAiJIIXlHOZLVNGM' }));
 app.use(passport.initialize());
 app.use(passport.session());

@@ -1,28 +1,5 @@
 <div id="home">
   <div class="container">
-      {{#if user}}
-          {{ user.firstName }}
-          <a href="/api/logout" class="btn btn-dark">Logout</a>
-      {{ else }}
-              <div class="row">
-                  <div class="col">
-                      <form action="/api/login" method="post">
-                          <div>
-                              <label>eamil:</label>
-                              <input type="email" name="email"/>
-                          </div>
-                          <div>
-                              <label>Password:</label>
-                              <input type="password" name="password"/>
-                          </div>
-                          <div>
-                              <input type="submit" value="Log In"/>
-                          </div>
-                      </form>
-                  </div>
-              </div>
-      {{/if}}
-
     <div class="row">
       <div class="col-8 offset-2">
         <h1>{{msg}}</h1>
