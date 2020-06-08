@@ -9,7 +9,7 @@ var API = {
   saveExample: function(example) {
     return $.ajax({
       headers: {
-        "Content-Type": "application/json"
+        'Content-Type': 'application/json'
       },
       type: "POST",
       url: "api/examples",

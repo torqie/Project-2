@@ -97,3 +97,106 @@
   outline: none;
   box-shadow: none;
 }
+
+input.parsley-success,
+select.parsley-success,
+textarea.parsley-success {
+  color: #468847;
+  background-color: #DFF0D8;
+  border: 1px solid #D6E9C6;
+}
+
+input.parsley-error,
+select.parsley-error,
+textarea.parsley-error {
+  color: #B94A48;
+  background-color: #F2DEDE;
+  border: 1px solid #EED3D7;
+}
+
+.parsley-errors-list {
+  margin: 2px 0 3px;
+  padding: 0;
+  list-style-type: none;
+  font-size: 0.9em;
+  line-height: 0.9em;
+  opacity: 0;
+  color: #B94A48;
+
+  transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+}
+
+.parsley-errors-list.filled {
+  opacity: 1;
+}
+
+
+
+
+
+
+ieldset {
+  display: none
+}
+
+fieldset.show {
+  display: block
+}
+
+select:focus,
+input:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: 1px solid #2196F3 !important;
+  outline-width: 0 !important;
+  font-weight: 400
+}
+
+button:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  outline-width: 0
+}
+
+.tabs {
+  margin: 2px 5px 0px 5px;
+  padding-bottom: 10px;
+  cursor: pointer
+}
+
+.tabs:hover,
+.tabs.active {
+  border-bottom: 1px solid #2196F3
+}
+
+a:hover {
+  text-decoration: none;
+  color: #1565C0
+}
+
+.box {
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 10px
+}
+
+.modal-backdrop {
+  background-color: #64B5F6
+}
+
+.line {
+  background-color: #CFD8DC;
+  height: 1px;
+  width: 100%
+}
+
+@media screen and (max-width: 768px) {
+  .tabs h6 {
+    font-size: 12px
+  }
+}

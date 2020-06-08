@@ -26,13 +26,13 @@ module.exports = (app, passport) => {
     bcrypt.genSalt(10, (err, salt) => {
       if (err) return next(err);
 
-      bcrypt.hash(req.body.password, salt, async (err2, hash) => {
+      bcrypt.hash(req.body.register_password, salt, async (err2, hash) => {
         if (err2) return next(err2);
         // Store the user to the database, then send the response
         const user = await db.User.create({
-          firstName: req.body.firstName,
-          lastName: req.body.lastName,
-          email: req.body.email,
+          firstName: req.body.register_firstName,
+          lastName: req.body.register_lastName,
+          email: req.body.register_email,
           password: hash,
         });
         req.login(user, (err) => {

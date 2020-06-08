@@ -3,31 +3,43 @@
     <div class="modal-content">
 
       <div class="modal-body">
-        <form action="/api/register" method="post">
+        <form action="/api/register" method="post" data-parsley-validate>
           <div class="form-group">
-            <label for="email">First Name:</label>
-            <input type="text" id="firstName" name="firstName" class="form-control" required>
+            <label for="register_firstName">First Name:</label>
+            <input type="text" id="register_firstName" name="register_firstName" class="form-control" required>
+
+          </div>
+
+
+          <div class="form-group">
+            <label for="register_lastName">Last Name:</label>
+            <input type="text" id="register_lastName" name="register_lastName" class="form-control" required>
+
+          </div>
+
+
+          <div class="form-group">
+            <label for="register_email">Email:</label>
+            <input type="email" id="register_email" name="register_email" class="form-control" required>
+
           </div>
 
           <div class="form-group">
-            <label for="email">Last Name:</label>
-            <input type="text" id="lastName" name="lastName" class="form-control" required>
+            <label for="register_password">Password:</label>
+            <input type="password" id="register_password" name="register_password" class="form-control"
+                   data-parsley-required="true"
+            />
           </div>
 
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" class="form-control" required>
-          </div>
 
           <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" class="form-control" required>
+            <label for="register_password_confirm">Confirm Password:</label>
+            <input type="password" id="register_password_confirm" name="register_password_confirm" class="form-control"
+                   data-parsley-required="true"
+                   data-parsley-equalto="#register_password"
+            />
           </div>
 
-          <div class="form-group">
-            <label for="password_confirm">Confirm Password:</label>
-            <input type="password" id="password_confirm" name="password_confirm" class="form-control" required>
-          </div>
 
           <div class="form-group float-right mb-0">
             <button type="submit" class="btn btn-accent">Register</button>
