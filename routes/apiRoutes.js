@@ -22,41 +22,24 @@ module.exports = (app, passport) => {
   app.post('/api/register', (req, res, next) => {
     // Whatever verifications and checks you need to perform here
     // eslint-disable-next-line consistent-return
+
     bcrypt.genSalt(10, (err, salt) => {
       if (err) return next(err);
-      bcrypt.hash(req.body.password, salt, (err2, hash) => {
+
+      bcrypt.hash(req.body.password, salt, async (err2, hash) => {
         if (err2) return next(err2);
         // Store the user to the database, then send the response
-        const user = db.User.create({
+        const user = await db.User.create({
           firstName: req.body.firstName,
           lastName: req.body.lastName,
           email: req.body.email,
           password: hash,
         });
-        return res.json(user);
+        req.login(user, (err) => {
+          if (err) { return next(err); }
+          return res.redirect('/');
+        });
       });
-    });
-  });
-
-
-  // Get all examples
-  app.get('/api/examples', (req, res) => {
-    db.Example.findAll({}).then((dbExamples) => {
-      res.json(dbExamples);
-    });
-  });
-
-  // Create a new example
-  app.post('/api/examples', (req, res) => {
-    db.Example.create(req.body).then((dbExample) => {
-      res.json(dbExample);
-    });
-  });
-
-  // Delete an example by id
-  app.delete('/api/examples/:id', (req, res) => {
-    db.Example.destroy({ where: { id: req.params.id } }).then((dbExample) => {
-      res.json(dbExample);
     });
   });
 };
