@@ -1,16 +1,30 @@
-const db = require('../models');
 const bcrypt = require('bcryptjs');
+const db = require('../models');
 
 module.exports = (app, passport) => {
   // Authentication Routes
   // =============================================================
 
+  // // Login Route
+  // app.post('/api/login', passport.authenticate('local', {
+  //   // successRedirect: '/',
+  //   // failureRedirect: '/',
+  //   failureFlash: true,
+  // }));
+
   // Login Route
-  app.post('/api/login', passport.authenticate('local', {
-    successRedirect: '/',
-    failureRedirect: '/',
-    failureFlash: true,
-  }));
+  app.post('/api/login', (req, res, next) => {
+    console.log(req.body);
+    passport.authenticate('local', (err, user, info) => {
+      console.log('user: ', user);
+      if (err) { return next(err); }
+      if (!user) { return res.json({ success: false }); }
+      req.login(user, (err2) => {
+        if (err2) { return next(err); }
+        return res.redirect('/');
+      });
+    })(req, res, next);
+  });
 
   // Logout Route
   app.get('/api/logout', (req, res) => {

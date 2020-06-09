@@ -32,7 +32,7 @@ app.set('view engine', 'hbs');
 // Passport.js Authentication
 app.use(session({ secret: 'tmNabHUTjPyAiJIIXlHOZLVNGM' }));
 app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.session({ cookie: { maxAge: 60000 } }));
 app.use(flash());
 
 require('./config/passport');
