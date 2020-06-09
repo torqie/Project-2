@@ -49,7 +49,7 @@ passport.deserializeUser((user, done) => {
 require('./routes/apiRoutes')(app);
 require('./routes/htmlRoutes')(app, passport);
 
-const syncOptions = { force: true };
+const syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`

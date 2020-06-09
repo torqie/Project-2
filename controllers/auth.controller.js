@@ -7,6 +7,7 @@ require('../config/passport');
 exports.register = async (req, res) => {
   const candidate = await db.User.findOne({ where: { email: req.body.email } });
 
+
   if (candidate) {
     res.json({
       success: false,
