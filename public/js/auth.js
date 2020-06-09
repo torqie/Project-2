@@ -37,7 +37,5 @@ $('#register-form').submit(async (event) => {
       $('#auth-modal').modal('hide');
       window.location.reload();
     }
-
   });
 });
-

@@ -5,8 +5,8 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 const flash = require('connect-flash');
-const db = require('./models');
 const path = require('path');
+const db = require('./models');
 
 
 const app = express();
@@ -46,10 +46,10 @@ passport.deserializeUser((user, done) => {
 });
 
 // Routes
-require('./routes/apiRoutes')(app, passport);
+require('./routes/apiRoutes')(app);
 require('./routes/htmlRoutes')(app, passport);
 
-const syncOptions = { force: false };
+const syncOptions = { force: true };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
