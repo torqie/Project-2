@@ -33,27 +33,35 @@ module.exports = (app, passport) => {
   });
 
   // Register Route
-  app.post('/api/register', (req, res, next) => {
-    // Whatever verifications and checks you need to perform here
-    // eslint-disable-next-line consistent-return
+  app.post('/api/register', async (req, res) => {
+    const candidate = await db.User.findOne({ where: { email: req.body.email } });
 
-    bcrypt.genSalt(10, (err, salt) => {
-      if (err) return next(err);
-
-      bcrypt.hash(req.body.register_password, salt, async (err2, hash) => {
-        if (err2) return next(err2);
-        // Store the user to the database, then send the response
-        const user = await db.User.create({
-          firstName: req.body.register_firstName,
-          lastName: req.body.register_lastName,
-          email: req.body.register_email,
-          password: hash,
-        });
-        req.login(user, (err) => {
-          if (err) { return next(err); }
-          return res.redirect('/');
-        });
+    if (candidate) {
+      res.json({
+        success: false,
+        message: 'This email is already taken. Try another.',
       });
-    });
+    } else {
+      const salt = await bcrypt.genSaltSync(10);
+      const { password } = await req.body;
+      const user = new db.User({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        password: bcrypt.hashSync(password, salt),
+      });
+      try {
+        await user.save();
+        await passport.login(user);
+        res.status(201).json(user);
+      } catch (e) {
+        console.log('error: ', e);
+      }
+    }
   });
 };
+
+
+module.exports.register = async function (req, res) {
+
+}
