@@ -7,19 +7,14 @@ const passport = require('passport');
 const flash = require('connect-flash');
 const path = require('path');
 const db = require('./models');
-const compileSass = require('express-compile-sass');
-const root = process.cwd();
-
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(express.static('public'));
 app.use(cookieParser());
-
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Handlebars
 app.engine('hbs', exphbs({
@@ -44,16 +39,6 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser((user, done) => {
   done(null, user);
-});
-
-
-// Sass Compiling
-app.use(compileSass({
-  root: root,
-  sourceMap: true, // Includes Base64 encoded source maps in output css
-  sourceComments: true, // Includes source comments in output css
-  watchFiles: true, // Watches sass files and updates mtime on main files for each change
-  logToConsole: false // If true, will log to console.error on errors
 });
 
 // Routes

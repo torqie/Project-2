@@ -1,8 +1,6 @@
-body {
-  font-family: 'Fira Mono', monospace;
-}
-h1, h2, h3, h4, h5, h6, .btn {
-  font-family: 'Roboto Condensed', sans-serif;
+
+.btn {
+  font-family: 'Fira Code', sans-serif;
   font-weight: 300;
 }
 h1, h2, h3, h4, h5, h6, label, .btn {
@@ -15,7 +13,7 @@ label {
 }
 
 #logo {
-  font-family: "Ubuntu Mono", Monospaced, serif;
+  font-family: "Fira Code", Monospaced, serif;
   font-size: 2.3rem;
   text-transform: initial;
 }
