@@ -10,8 +10,10 @@ module.exports = function (app) {
     });
   });
 
-  app.get('/user', ensureLoggedIn('/login'), (req, res) => {
+  app.get('/user', ensureLoggedIn('/'), async (req, res) => {
+    // const users = await db.User.findAll();
     res.render('user', {
+      users: await db.User.findAll(),
       user: req.user,
     });
   });

@@ -15,7 +15,7 @@ exports.register = async (req, res) => {
     });
   } else {
     const salt = await bcrypt.genSaltSync(10);
-    const { password } = await req.body;
+    const password = await req.body.password;
     const user = new db.User({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
@@ -33,6 +33,7 @@ exports.register = async (req, res) => {
     }
   }
 };
+
 
 // Login
 exports.login = (req, res, next) => {
