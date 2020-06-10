@@ -12,6 +12,7 @@
 <body>
     {{> navigation }}
     <div class="container">
+      <div id="logo"></div>
       {{{body}}}
     </div>
 
@@ -23,10 +24,35 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <script src="https://parsleyjs.org/dist/parsley.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/typewriter-effect@2.3.1/dist/core.js"></script>
 <script src="/js/auth.js"></script>
 <script>
 
     $(document).ready(function() {
+
+      var app = document.getElementById('logo');
+
+      var typewriter = new Typewriter(app, {
+        loop: false,
+        cursor: "_"
+      });
+
+      typewriter.typeString('<span class="blue">gitSum</span>')
+        .typeString('<span class="gray">(</span>')
+        .typeString('<span class="red">money</span>')
+        .typeString('<span class="gray">)</span>')
+          .pauseFor(1000)
+          .deleteChars(7)
+          .pauseFor(1000)
+          .typeString('<span class="red">education')
+          .typeString('<span class="gray">)')
+          .pauseFor(2500)
+          .start();
+
+
+
+
+
       $('#auth-tabs a').on('click', function (e) {
         e.preventDefault();
         $(this).tab('show');
