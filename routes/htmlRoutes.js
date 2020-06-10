@@ -1,27 +1,34 @@
-var db = require("../models");
+const { ensureLoggedIn } = require('connect-ensure-login');
+const db = require('../models');
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Load index page
-  app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
+  app.get('/', (req, res) => {
+    res.render('index', {
+      user: req.user,
+      error: req.flash('error'),
+    });
+  });
+
+  app.get('/user', ensureLoggedIn('/'), async (req, res) => {
+    // const users = await db.User.findAll();
+    res.render('user', {
+      users: await db.User.findAll(),
+      user: req.user,
     });
   });
 
   // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
+  app.get('/example/:id', (req, res) => {
+    db.Example.findOne({ where: { id: req.params.id } }).then((dbExample) => {
+      res.render('example', {
+        example: dbExample,
       });
     });
   });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
-    res.render("404");
+  app.get('*', (req, res) => {
+    res.render('404');
   });
 };

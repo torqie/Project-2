@@ -1,24 +1,15 @@
-var db = require("../models");
+// Controllers
+const authController = require('../controllers/auth.controller');
 
-module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
-    });
-  });
+module.exports = (app) => {
+  // Authentication Routes
+  // =============================================================
+  // Login Route
+  app.post('/api/login', authController.login);
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
-    });
-  });
+  // Logout Route
+  app.get('/api/logout', authController.logout);
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
-    });
-  });
+  // Register Route
+  app.post('/api/register', authController.register);
 };
