@@ -8,14 +8,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      user_id: {
-        allowNull: false,
-        type: Sequelize.INTEGER,
-      },
-      category_id: {
-        allowNull: false,
-        type: Sequelize.INTEGER,
-      },
       title: {
         allowNull: false,
         type: Sequelize.STRING,
@@ -25,12 +17,10 @@ module.exports = {
         type: Sequelize.TEXT,
       },
       approved: {
-        allowNull: false,
         type: Sequelize.BOOLEAN,
         defaultValue: false,
       },
       views: {
-        allowNull: false,
         type: Sequelize.INTEGER,
         defaultValue: 0,
       },

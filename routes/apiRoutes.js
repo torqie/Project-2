@@ -1,5 +1,7 @@
 // Controllers
 const authController = require('../controllers/auth.controller');
+const usersController = require('../controllers/users.controller');
+const categoriesController = require('../controllers/categories.controller');
 const tutorialsController = require('../controllers/tutorial.controller');
 
 module.exports = (app) => {
@@ -12,6 +14,36 @@ module.exports = (app) => {
   // Register Route
   app.post('/api/register', authController.register);
 
+  // USERS ROUTES
+  // =============================================================
+  // Get All Categories
+  app.get('/api/users', usersController.findAll);
+  // Get A Single Category
+  app.get('/api/users/:id', usersController.findOne);
+  // Get Tutorials by category
+  app.get('/api/users/:id/tutorials', usersController.tutorialsByUser);
+  // Create A Category
+  app.post('/api/users', usersController.create);
+  // Update A Category
+  app.put('/api/users/:id', usersController.update);
+  // Delete A Category
+  app.delete('/api/users/:id', usersController.delete);
+
+  // CATEGORY ROUTES
+  // =============================================================
+  // Get All Categories
+  app.get('/api/categories', categoriesController.findAll);
+  // Get A Single Category
+  app.get('/api/categories/:id', categoriesController.findOne);
+  // Get Tutorials by category
+  app.get('/api/categories/:id/tutorials', categoriesController.tutorialsByCategory);
+  // Create A Category
+  app.post('/api/categories', categoriesController.create);
+  // Update A Category
+  app.put('/api/categories/:id', categoriesController.update);
+  // Delete A Category
+  app.delete('/api/categories/:id', categoriesController.delete);
+
   // TUTORIAL ROUTES
   // =============================================================
   // Get All Tutorials
@@ -21,7 +53,10 @@ module.exports = (app) => {
   // Create A Tutorial
   app.post('/api/tutorials', tutorialsController.create);
   // Update A Tutorial
-  app.get('/api/tutorials', tutorialsController.update);
+  app.put('/api/tutorials/:id', tutorialsController.update);
   // Delete A Tutorial
-  app.get('/api/tutorials', tutorialsController.findAll());
+  app.delete('/api/tutorials/:id', tutorialsController.delete);
+
+
+
 };

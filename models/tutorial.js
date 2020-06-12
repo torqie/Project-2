@@ -1,14 +1,6 @@
 
 module.exports = (sequelize, DataTypes) => {
   const Tutorial = sequelize.define('Tutorial', {
-    user_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    category_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -20,15 +12,22 @@ module.exports = (sequelize, DataTypes) => {
     approved: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
+      defaultValue: true,
     },
     views: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      defaultValue: 0,
     },
   }, {});
   Tutorial.associate = (models) => {
-    // associations can be defined here
+    // Associations can be defined here
     Tutorial.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false,
+      },
+    });
+    Tutorial.belongsTo(models.Category, {
       foreignKey: {
         allowNull: false,
       },

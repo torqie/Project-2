@@ -2,29 +2,33 @@ const db = require('../models');
 
 // Get All Tutorials
 exports.findAll = async (req, res) => {
-  if (req.params.category_id) {
-    const tutorials = await db.Tutorial.findAll({
+  const tutorials = await db.Tutorial.findAll({ include: db.User });
+  if (req.params.categoryId) {
+    tutorials = await db.Tutorial.findAll({
       where: {
-        category_id: req.params.category_id,
+        CategoryId: req.params.categoryId,
       },
+      include: db.User,
     });
-  } else {
-    const tutorials = await db.Tutorial.findAll();
   }
   res.json(tutorials);
 };
 
 // Get All Tutorials By Category
 exports.findOne = async (req, res) => {
-  const tutorial = await db.Tutorial.findByPk(req.params.id);
+  const tutorial = await db.Tutorial.findOne({
+    where: { id: req.params.id },
+    include: [db.User, db.Category],
+  });
   res.json(tutorial);
 };
 
-// Get All Tutorials By Category
+// Create A Tutorial
 exports.create = async (req, res) => {
+  const category = await db.Category.findByPk(req.body.categoryId);
   const tutorial = new db.Tutorial({
-    user_id: req.user.id,
-    category_id: req.body.category_id,
+    UserId: 2,
+    CategoryId: req.body.categoryId,
     title: req.body.title,
     content: req.body.content,
   });
@@ -36,9 +40,9 @@ exports.create = async (req, res) => {
   }
 };
 
-exports.create = async (req, res) => {
+exports.update = async (req, res) => {
   const tutorial = db.Tutorial.findByPk(req.params.category_id);
-  tutorial.user_id = req.user.id;
+  tutorial.UserId = req.user.id;
   tutorial.category_id = req.body.category_id;
   tutorial.title = req.body.title;
   tutorial.content = req.body.content;
@@ -51,7 +55,7 @@ exports.create = async (req, res) => {
 };
 
 exports.delete = async (req, res) => {
-  const tutorial = db.Tutorial.findByPk(req.params.category_id);
+  const tutorial = await db.Tutorial.findByPk(req.params.id);
 
   try {
     await tutorial.destroy();
