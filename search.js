@@ -8,12 +8,12 @@ searchBar.readyStateChange = function (options) {
     const limit = options.limit || 12;
 };
 
-const settings = {
+const searchSettings = {
     "url": "/api/search?categoryId=&q=Tutorial 2",
     "method": "GET",
     "timeout": 0,
 };
 
-$.ajax(settings).done(function (response) {
+$.ajax(searchSettings).done(function (response) {
     console.log(response);
 });
