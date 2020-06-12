@@ -20,3 +20,13 @@ var update = {
 $.ajax(update).done(function(response) {
     console.log(response);
 });
+
+var deleteContent = {
+    "url": "/api/categories",
+    "method": "DELETE",
+    "timeout": 0,
+};
+
+$.ajax(deleteContent).done(function(response) {
+    console.log(response);
+});
