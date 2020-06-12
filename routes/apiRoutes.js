@@ -3,6 +3,7 @@ const authController = require('../controllers/auth.controller');
 const usersController = require('../controllers/users.controller');
 const categoriesController = require('../controllers/categories.controller');
 const tutorialsController = require('../controllers/tutorial.controller');
+const searchController = require('../controllers/search.controller');
 
 module.exports = (app) => {
   // AUTHENTICATION ROUTES
@@ -57,6 +58,7 @@ module.exports = (app) => {
   // Delete A Tutorial
   app.delete('/api/tutorials/:id', tutorialsController.delete);
 
-
-
+  // SEARCH ROUTES
+  // =============================================================
+  app.get('/api/search', searchController.search);
 };
