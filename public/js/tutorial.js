@@ -22,7 +22,7 @@ $.ajax(update).done(function(response) {
 });
 
 var deleteContent = {
-    "url": "/api/categories",
+    "url": "/api/categories/4",
     "method": "DELETE",
     "timeout": 0,
 };
