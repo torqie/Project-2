@@ -2,11 +2,11 @@
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
       <div class="modal-body">
-        <form action="">
+        <form id="search-form">
           <div class="input-group">
-            <input type="search" class="form-control form-control-lg border border-right-0 form-control-borderless" placeholder="Search for tutorials...">
+            <input id="search" name="search" type="search" class="form-control form-control-lg border border-right-0 form-control-borderless" placeholder="Search for tutorials...">
             <div class="input-group-append">
-              <button class="btn btn-lg btn-outline-secondary border border-left-0 form-control-borderless" type="submit">
+              <button id="search-button" name="search-button" class="btn btn-lg btn-outline-secondary border border-left-0 form-control-borderless" type="submit">
                 <i class="fa fa-search"></i>
               </button>
             </div>
@@ -14,7 +14,9 @@
         </form>
 
         <!-- Search Results -->
+        <ul id="search-results">
 
+        </ul>
       </div>
     </div>
   </div>
