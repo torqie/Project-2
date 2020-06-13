@@ -1,0 +1,39 @@
+// Fonts
+@import url(https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400&family=Montserrat:wght@300;400;500&display=swap);
+
+// Options
+$enable-gradients:true;
+
+// Body
+$body-bg: #f8fafc;
+$body-color: #222222;
+
+// Typography
+$font-family-sans-serif: 'Montserrat', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+// Headings
+$headings-font-family: 'Fira Code', monospace;
+
+// Colors
+$blue: #3490dc;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66d9b;
+$red: #e3342f;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
+
+$theme-colors: (
+  "accent": #f87100
+);
+
+// Buttons
+$btn-border-radius: .125rem;
+$btn-font-family: 'Fira Code', sans-serif;
+$btn-font-weight: 600;
+
