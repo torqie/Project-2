@@ -324,6 +324,12 @@ legend {
   white-space: normal;
 }
 
+@media (max-width: 1200px) {
+  legend {
+    font-size: calc(1.275rem + 0.3vw);
+  }
+}
+
 progress {
   vertical-align: baseline;
 }
@@ -387,9 +393,23 @@ h1,
   font-size: 2.25rem;
 }
 
+@media (max-width: 1200px) {
+  h1,
+  .h1 {
+    font-size: calc(1.35rem + 1.2vw);
+  }
+}
+
 h2,
 .h2 {
   font-size: 1.8rem;
+}
+
+@media (max-width: 1200px) {
+  h2,
+  .h2 {
+    font-size: calc(1.305rem + 0.66vw);
+  }
 }
 
 h3,
@@ -397,9 +417,23 @@ h3,
   font-size: 1.575rem;
 }
 
+@media (max-width: 1200px) {
+  h3,
+  .h3 {
+    font-size: calc(1.2825rem + 0.39vw);
+  }
+}
+
 h4,
 .h4 {
   font-size: 1.35rem;
+}
+
+@media (max-width: 1200px) {
+  h4,
+  .h4 {
+    font-size: calc(1.26rem + 0.12vw);
+  }
 }
 
 h5,
@@ -423,10 +457,22 @@ h6,
   line-height: 1.2;
 }
 
+@media (max-width: 1200px) {
+  .display-1 {
+    font-size: calc(1.725rem + 5.7vw);
+  }
+}
+
 .display-2 {
   font-size: 5.5rem;
   font-weight: 300;
   line-height: 1.2;
+}
+
+@media (max-width: 1200px) {
+  .display-2 {
+    font-size: calc(1.675rem + 5.1vw);
+  }
 }
 
 .display-3 {
@@ -435,10 +481,22 @@ h6,
   line-height: 1.2;
 }
 
+@media (max-width: 1200px) {
+  .display-3 {
+    font-size: calc(1.575rem + 3.9vw);
+  }
+}
+
 .display-4 {
   font-size: 3.5rem;
   font-weight: 300;
   line-height: 1.2;
+}
+
+@media (max-width: 1200px) {
+  .display-4 {
+    font-size: calc(1.475rem + 2.7vw);
+  }
 }
 
 hr {
@@ -6274,6 +6332,12 @@ a.badge-accent.focus {
   opacity: .5;
 }
 
+@media (max-width: 1200px) {
+  .close {
+    font-size: calc(1.26rem + 0.12vw);
+  }
+}
+
 .close:hover {
   color: #000;
   text-decoration: none;
@@ -11174,7 +11238,7 @@ label {
 
 #logo {
   font-family: "Fira Code", Monospaced, serif;
-  font-size: 2.3rem;
+  font-size: 2rem;
   text-transform: initial;
 }
 
@@ -11389,6 +11453,55 @@ textarea.parsley-error {
   .navbar-collapse.show {
     left: 0;
     transition: left 0.3s ease-in;
+  }
+}
+
+#home .home-banner {
+  padding: 2rem;
+  background-image: linear-gradient(131deg, #67b3e7 1%, #1e6fb7 67%);
+  margin-bottom: 10px;
+}
+
+#home #stats .stat {
+  text-align: center;
+  border-right: 1px solid #e2e0e0;
+  padding: 5px 30px;
+  color: #918f8f;
+}
+
+#home #stats .stat h3 {
+  margin: 5px 0 0 0;
+}
+
+#home #stats .stat span {
+  font-size: 0.5rem;
+  text-transform: uppercase;
+}
+
+#home #stats .stat:last-child {
+  border-right: 0;
+}
+
+@media (min-width: 768px) {
+  #home .home-banner {
+    background: url(/images/Jumbotron.svg) no-repeat;
+    background-size: 2000px auto;
+    background-position: bottom;
+    padding-bottom: 4rem;
+    margin-bottom: -30px;
+  }
+}
+
+@media (min-width: 992px) {
+  #home .home-banner {
+    min-height: 447px;
+    margin-bottom: -10;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  #home .home-banner {
+    background-size: 100% auto;
   }
 }
 

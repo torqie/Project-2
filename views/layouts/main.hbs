@@ -15,10 +15,9 @@
 </head>
 <body>
     {{> navigation }}
-    <div class="container">
-      <div id="logo"></div>
+
       {{{body}}}
-    </div>
+
 
   {{> modals/auth }}
   {{> modals/search }}
@@ -46,13 +45,12 @@
         .typeString('<span class="gray">(</span>')
         .typeString('<span class="red">money</span>')
         .typeString('<span class="gray">)</span>')
-          .pauseFor(1000)
-          .deleteChars(7)
-          .pauseFor(1000)
-          .typeString('<span class="red">education')
-          .typeString('<span class="gray">)')
-          .pauseFor(2500)
-          .start();
+        .pauseFor(1000)
+        .deleteChars(7)
+        .pauseFor(1000)
+        .typeString('<span class="red">education')
+        .typeString('<span class="gray">)')
+        .start();
 
       $('#auth-tabs a').on('click', function (e) {
         e.preventDefault();
