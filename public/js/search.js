@@ -13,6 +13,10 @@ $('#search').on('keyup', () => {
         timeout: 0,
       }).done((response) => {
         console.log(response);
+        if (response.length < 1) {
+          const blah = $(`<li><h3>No Search Results</h3></li>`);
+          blah.appendTo(searchResults);
+        }
         // push li's to the modal
         searchResults.empty();
         for (let i = 0; i < response.length; i++) {
