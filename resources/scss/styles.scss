@@ -108,6 +108,7 @@ textarea.parsley-error {
 #search-results:hover {
   background-color: #949494;
   color: #ffffff;
+  transition: all 0.4s ease-in-out;
 }
 
 #search-results:nth-child {
