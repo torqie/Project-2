@@ -43,6 +43,12 @@ label {
   box-shadow: none;
 }
 
+.form-control {
+  transition: all 0.5s ease-in-out;
+  color: #50757D;
+  box-shadow: 1px 1px 3px 1px #50757D;
+}
+
 input.parsley-success,
 select.parsley-success,
 textarea.parsley-success {
