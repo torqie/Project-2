@@ -109,12 +109,11 @@ textarea.parsley-error {
   background-color: #949494;
   color: #ffffff;
   transition: all 0.4s ease-in-out;
+  box-shadow: 1px 1px 3px 1px rgba(51, 54, 58, 0.5);
 }
-
 #search-results:nth-child {
   background-color: rgb(227, 244, 255);
 }
-
 #search-results:nth-child:hover {
   background-color: rgb(132, 159, 179);
 }
