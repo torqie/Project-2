@@ -8,14 +8,14 @@ const config = require(`${__dirname}/../config/config.json`)[env];
 const db = {};
 
 if (config.use_env_variable) {
-  var sequelize = new Sequelize(process.env[config.use_env_variable]);
+  let sequelize = new Sequelize(process.env[config.use_env_variable]);
 } else {
-  var sequelize = new Sequelize(
+  let sequelize = new Sequelize(
     config.database,
     config.username,
     config.password,
     {
-      port: 3306,
+      port: 3307,
       dialect: config.dialect,
     },
   );

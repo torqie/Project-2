@@ -7,6 +7,7 @@ const passport = require('passport');
 const flash = require('connect-flash');
 const path = require('path');
 const db = require('./models');
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 

@@ -104,3 +104,16 @@ textarea.parsley-error {
     font-size: 12px
   }
 }
+
+#search-results:hover {
+  background-color: #949494;
+  color: #ffffff;
+}
+
+#search-results:nth-child {
+  background-color: rgb(227, 244, 255);
+}
+
+#search-results:nth-child:hover {
+  background-color: rgb(132, 159, 179);
+}
