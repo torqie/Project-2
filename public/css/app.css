@@ -1,6 +1,11 @@
-@import url(https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;
+/*!
+ * Bootstrap v4.5.0 (https://getbootstrap.com/)
+ * Copyright 2011-2020 The Bootstrap Authors
+ * Copyright 2011-2020 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
 
-400&family=Montserrat:wght@300;400;500&display=swap);:root {
+:root {
   --blue: #3490dc;
   --indigo: #6574cd;
   --purple: #9561e2;
@@ -383,7 +388,7 @@ h6,
 .h5,
 .h6 {
   margin-bottom: 0.5rem;
-  font-family: "Fira Code", monospace;
+  font-family: "Ubuntu Mono", monospace;
   font-weight: 500;
   line-height: 1.2;
 }
@@ -11217,7 +11222,7 @@ a.text-accent:focus {
 }
 
 .btn {
-  font-family: 'Fira Code', sans-serif;
+  font-family: 'Ubuntu Mono', monospace;
 }
 
 h1,
@@ -11237,7 +11242,7 @@ label {
 }
 
 #logo {
-  font-family: "Fira Code", Monospaced, serif;
+  font-family: 'Ubuntu Mono', monospace;
   font-size: 2rem;
   text-transform: initial;
 }
@@ -11333,7 +11338,7 @@ textarea.parsley-error {
 .navbar {
   background-color: #f6f6f6;
   height: 90px;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Ubuntu Mono', monospace;
   text-transform: uppercase;
   font-size: 1rem;
 }
@@ -11456,6 +11461,10 @@ textarea.parsley-error {
   }
 }
 
+footer {
+  margin-top: 60px;
+}
+
 #home .home-banner {
   padding: 2rem;
   background-image: linear-gradient(131deg, #67b3e7 1%, #1e6fb7 67%);
@@ -11474,7 +11483,7 @@ textarea.parsley-error {
 }
 
 #home #stats .stat span {
-  font-size: 0.5rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
 }
 
@@ -11484,7 +11493,7 @@ textarea.parsley-error {
 
 @media (min-width: 768px) {
   #home .home-banner {
-    background: url(/images/Jumbotron.svg) no-repeat;
+    background: url("/images/Jumbotron.svg") no-repeat;
     background-size: 2000px auto;
     background-position: bottom;
     padding-bottom: 4rem;
@@ -11503,5 +11512,32 @@ textarea.parsley-error {
   #home .home-banner {
     background-size: 100% auto;
   }
+}
+
+#home #learn-mern {
+  margin-top: 100px;
+}
+
+#home #learn-mern .skill-card .skill-card-meta {
+  padding: 13px 0 5px 0;
+  border: 1px solid #fff;
+  border-top: 0;
+  -o-border-image: url(/images/long-dash-border.svg) 1 round;
+  border-image: url(/images/long-dash-border.svg) 1 round;
+  position: relative;
+  top: -4px;
+  color: #666464;
+}
+
+#home #learn-mern .skill-card .skill-card-meta span {
+  color: #ababab;
+  font-size: .6rem;
+  line-height: .6rem;
+  position: relative;
+  top: -6px;
+}
+
+#home #learn-mern .skill-card .skill-card-meta .tutorials {
+  border-right: 1px solid #dadada;
 }
 

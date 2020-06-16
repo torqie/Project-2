@@ -15,7 +15,7 @@
         margin: 5px 0 0 0;
       }
       span {
-        font-size: 0.5rem;
+        font-size: 0.6rem;
         text-transform: uppercase;
       }
 
@@ -29,7 +29,7 @@
 
   @media(min-width: 768px) {
     .home-banner {
-      background:url(/images/Jumbotron.svg) no-repeat;
+      background:url("/images/Jumbotron.svg") no-repeat;
       background-size: 2000px auto;
       background-position: bottom;
       padding-bottom: 4rem;
@@ -50,6 +50,45 @@
       background-size:100% auto
     }
   }
+
+#learn-mern {
+  margin-top: 100px;
+
+  .skill-card {
+
+
+    .skill-card-top {
+      //box-shadow: 0 8px 4px 0px gray;
+    }
+
+    .skill-card-meta {
+      padding: 13px 0 5px 0;
+      border: 1px solid #fff;
+      border-top: 0;
+      -o-border-image: url(/images/long-dash-border.svg) 1 round;
+      border-image: url(/images/long-dash-border.svg) 1 round;
+      position: relative;
+      top:-4px;
+      color: #666464;
+
+      span {
+        color: #ababab;
+        font-size: .6rem;
+        line-height: .6rem;
+        position: relative;
+        top: -6px;
+      }
+
+
+    .tutorials {
+      border-right: 1px solid #dadada;
+    }
+
+    }
+
+  }
+
+}
 
 
 }

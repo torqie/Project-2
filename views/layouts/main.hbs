@@ -9,16 +9,16 @@
 
   <!-- Font Awesome fonts -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Plugin Styles -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
-    {{> navigation }}
-
-      {{{body}}}
-
-
+  {{> navigation }}
+  {{{body}}}
+  {{> footer }}
   {{> modals/auth }}
   {{> modals/search }}
 </body>
@@ -28,15 +28,17 @@
 <script src="https://parsleyjs.org/dist/parsley.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/typewriter-effect@2.3.1/dist/core.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="/js/auth.js"></script>
 <script src="/js/search.js"></script>
+<script src="/js/pages/home.js"></script>
 <script>
 
     $(document).ready(function() {
+      AOS.init();
+      var logo = document.getElementById('logo');
 
-      var app = document.getElementById('logo');
-
-      var typewriter = new Typewriter(app, {
+      var typewriter = new Typewriter(logo, {
         loop: false,
         cursor: "_"
       });
@@ -44,10 +46,9 @@
       typewriter.typeString('<span class="blue">gitSum</span>')
         .typeString('<span class="gray">(</span>')
         .typeString('<span class="red">money</span>')
-        .typeString('<span class="gray">)</span>')
-        .pauseFor(1000)
-        .deleteChars(7)
-        .pauseFor(1000)
+        .pauseFor(500)
+        .deleteChars(5)
+        .pauseFor(500)
         .typeString('<span class="red">education')
         .typeString('<span class="gray">)')
         .start();
@@ -71,10 +72,6 @@
       $('#search-modal-button').on('click', function() {
         $('#search-modal').modal('show');
       });
-
-
-
-
 
     });
 </script>
