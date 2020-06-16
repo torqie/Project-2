@@ -1,5 +1,5 @@
 {
-  "name": "node-handlebars-boilerplate",
+  "name": "handlebars-boilerplate",
   "version": "1.0.0",
   "description": "Project 2 Starter",
   "main": "server.js",
@@ -45,7 +45,7 @@
     "eslint-config-prettier": "^4.3.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-prettier": "^3.1.0",
-    "handlebars": "^4.5.0",
+    "handlebars": "^4.7.6",
     "laravel-mix": "^5.0.4",
     "mocha": "^6.1.4",
     "node-sass": "^4.14.1",
@@ -53,5 +53,17 @@
     "resolve-url-loader": "^3.1.0",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torqie/project-2.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/torqie/project-2/issues"
+  },
+  "homepage": "https://github.com/torqie/project-2#readme"
 }

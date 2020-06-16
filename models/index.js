@@ -15,7 +15,7 @@ if (config.use_env_variable) {
     config.username,
     config.password,
     {
-      port: 3306,
+      port: 3307,
       dialect: config.dialect,
     },
   );
