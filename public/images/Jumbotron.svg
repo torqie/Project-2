@@ -1,0 +1,25 @@
+<svg viewBox="0 0 1366 447" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Header Background</title>
+    <defs>
+        <radialGradient cx="50.8326708%" cy="91.608236%" fx="50.8326708%" fy="91.608236%" r="118.749829%" gradientTransform="translate(0.508327,0.916082),scale(0.321372,1.000000),rotate(18.015298),translate(-0.508327,-0.916082)" id="radialGradient-1">
+            <stop stop-color="#98D1F6" offset="0%"></stop>
+            <stop stop-color="#1576C7" offset="62.3389992%"></stop>
+            <stop stop-color="#2968A6" offset="100%"></stop>
+        </radialGradient>
+        <path d="M1366,90 L1366.01678,528.361631 C1186.20839,513.209691 948.997975,504 689,504 C425.372102,504 185.172501,513.468645 4.48577659,528.999722 L-1.23390187e-12,529 L-1.23390187e-12,90 L1366,90 Z" id="path-2"></path>
+        <filter x="-0.5%" y="-1.1%" width="101.0%" height="103.2%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.540336277   0 0 0 0 0.540336277   0 0 0 0 0.540336277  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="XL-1366" transform="translate(0.000000, -88.000000)">
+            <g id="Jumbotron">
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                <path stroke="#979797" stroke-width="1" d="M1365.50002,90.5 L0.5,90.5 L0.5,528.499969 L4.4643123,528.499723 C185.15991,512.968765 425.365988,503.5 689,503.5 C948.752949,503.5 1185.76266,512.692024 1365.51676,527.817756 L1365.50002,90.5 Z" stroke-linejoin="square" fill="url(#radialGradient-1)" fill-rule="evenodd"></path>
+            </g>
+        </g>
+    </g>
+</svg>

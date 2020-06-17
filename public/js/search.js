@@ -20,7 +20,19 @@ $('#search').on('keyup', () => {
         // push li's to the modal
         searchResults.empty();
         for (let i = 0; i < response.length; i++) {
-          const blah = $(`<li>${response[i].title}</li>`);
+          const blah = $(`
+          <li>
+            <a href='/tutorial/${response[i].id}' class="row">
+            <span class="col-9">
+              <h6>${response[i].title}</h6>
+              <p>something will go here in place of this random ass text.</p>
+            </span>
+              <span class="col-3 text-right">
+              <button class="btn btn-sm btn-primary">Mongo DB</button>
+              </span>
+              
+            </a>
+          </li>`);
           blah.appendTo(searchResults);
         }
       });
