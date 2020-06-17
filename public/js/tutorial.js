@@ -1,32 +1,13 @@
 var create = {
-    "url": "/api/categories/2/tutorials",
-    "method":"GET",
+    "url": "/api/tutorials/",
+    "method":"POST",
     "timeout":0,
+    "data": {
+        "title": 
+    }
 };
 
 $.ajax(create).done(function(response) {
     console.log(response);
 });
 
-//var update = {
-//     "url": "/api/categories",
-//     "method": "POST",
-//     "timeout": 0,
-//     "data": {
-//         "name": "/"
-//     }
-// };
-
-$.ajax(update).done(function(response) {
-    console.log(response);
-});
-
-var deleteContent = {
-    "url": "/api/categories/4",
-    "method": "DELETE",
-    "timeout": 0,
-};
-
-$.ajax(deleteContent).done(function(response) {
-    console.log(response);
-});
