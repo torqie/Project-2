@@ -11227,7 +11227,6 @@ a.text-accent:focus {
 
 h1,
 h2,
-h3,
 h4,
 h5,
 h6,
@@ -11359,6 +11358,21 @@ textarea.parsley-error {
 #search-results li:hover {
   background-color: #f6f6f6;
   transition: all 0.4s ease-in-out;
+}
+
+#noSearch {
+  color: #f6f6f6;
+  text-align: center;
+  background-color: #e3342f;
+}
+
+.skill-card-top {
+  border-radius: 15px;
+}
+
+.skill-card-top:hover {
+  transition: all 0.4s ease-in-out;
+  box-shadow: 1px 1px 3px 1px #c1effa;
 }
 
 .navbar {
