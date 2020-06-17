@@ -1,6 +1,7 @@
 .btn {
   font-family: 'Ubuntu Mono', monospace;
 }
+
 h1, h2, h3, h4, h5, h6, label, .btn {
   text-transform: uppercase;
 }
@@ -31,8 +32,6 @@ label {
 .list-group-item {
   line-height: 2.5;
 }
-
-
 
 .form-control:hover, .form-control:active, .form-control:focus {
   outline: none;
@@ -80,13 +79,10 @@ textarea.parsley-error {
   opacity: 1;
 }
 
-
-
 .nav-tabs .nav-link, .nav-tabs .nav-link.active, .nav-tabs .nav-link:hover {
   border-bottom: 0;
   color: gray;
 }
-
 
 #auth-modal  #auth-tabs  .nav-item  a{
   color: #808080;
@@ -133,4 +129,10 @@ textarea.parsley-error {
       transition: all 0.4s ease-in-out;
     }
   }
+}
+
+.noSearch {
+  color: #f6f6f6;
+  text-align: center;
+  background-color: #e3342f;
 }
