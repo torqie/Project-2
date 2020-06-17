@@ -2736,7 +2736,7 @@ textarea.form-control.is-invalid {
 
 .btn {
   display: inline-block;
-  font-family: "Fira Code", sans-serif;
+  font-family: "Ubuntu Mono", monospace;
   font-weight: 600;
   color: #222222;
   text-align: center;
@@ -2750,7 +2750,7 @@ textarea.form-control.is-invalid {
   padding: 0.375rem 0.75rem;
   font-size: 0.9rem;
   line-height: 1.6;
-  border-radius: 0.125rem;
+  border-radius: 0.35rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
@@ -4777,7 +4777,7 @@ input[type="button"].btn-block {
   line-height: 1;
   background-color: transparent;
   border: 1px solid transparent;
-  border-radius: 0.125rem;
+  border-radius: 0.35rem;
 }
 
 .navbar-toggler:hover,
@@ -11263,14 +11263,9 @@ label {
   line-height: 2.5;
 }
 
-.form-control-borderless {
-  border: none;
-}
-
-.form-control-borderless:hover,
-.form-control-borderless:active,
-.form-control-borderless:focus {
-  border: none;
+.form-control:hover,
+.form-control:active,
+.form-control:focus {
   outline: none;
   box-shadow: none;
 }
@@ -11333,6 +11328,37 @@ textarea.parsley-error {
   .tabs h6 {
     font-size: 12px;
   }
+}
+
+#search-results {
+  margin-top: 20px;
+}
+
+#search-results li {
+  padding: 15px;
+  border-bottom: 1px solid #f6f6f6;
+}
+
+#search-results li a {
+  color: #656565;
+}
+
+#search-results li a:hover {
+  text-decoration: none;
+}
+
+#search-results li a h6 {
+  margin: 0;
+}
+
+#search-results li a p {
+  margin: 0;
+  font-size: .75rem;
+}
+
+#search-results li:hover {
+  background-color: #f6f6f6;
+  transition: all 0.4s ease-in-out;
 }
 
 .navbar {

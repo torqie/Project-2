@@ -33,21 +33,17 @@ label {
 }
 
 
-.form-control-borderless {
-  border: none;
-}
 
-.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
-  border: none;
+.form-control:hover, .form-control:active, .form-control:focus {
   outline: none;
   box-shadow: none;
 }
 
-.form-control {
-  transition: all 0.5s ease-in-out;
-  color: #50757D;
-  box-shadow: 1px 1px 3px 1px #50757D;
-}
+//.form-control {
+//  transition: all 0.5s ease-in-out;
+//  color: #50757D;
+//  box-shadow: 1px 1px 3px 1px #50757D;
+//}
 
 input.parsley-success,
 select.parsley-success,
@@ -111,21 +107,30 @@ textarea.parsley-error {
   }
 }
 
-#search-results:hover {
-  background-color: #949494;
-  color: #ffffff;
-  transition: all 0.4s ease-in-out;
-  box-shadow: 1px 1px 3px 1px rgba(51, 54, 58, 0.5);
-}
-#search-results:nth-child {
-  background-color: rgb(227, 244, 255);
-}
-#search-results:nth-child:hover {
-  background-color: rgb(132, 159, 179);
-}
+#search-results {
+  margin-top:20px;
 
-#submit:hover {
-  transition: all 0.4s ease-in-out;
-  color: #f0e4e4;
-  box-shadow: 1px 1px 3px 1px rgba(51, 54, 58, 0.5);
+  li {
+    padding: 15px;
+    border-bottom: 1px solid #f6f6f6;
+    a {
+      color: #656565;
+      &:hover {
+        text-decoration: none;
+      }
+      h6 {
+        margin: 0;
+      }
+      p {
+        margin: 0;
+        font-size: .75rem;
+      }
+
+    }
+
+    &:hover {
+      background-color: #f6f6f6;
+      transition: all 0.4s ease-in-out;
+    }
+  }
 }
