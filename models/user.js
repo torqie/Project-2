@@ -20,7 +20,9 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
 
   User.associate = function (models) {
-    // associations can be defined here
+    User.hasMany(models.Tutorial, {
+      onDelete: 'cascade',
+    });
   };
   return User;
 };
