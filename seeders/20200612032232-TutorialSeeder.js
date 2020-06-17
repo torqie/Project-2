@@ -1,30 +1,21 @@
+const faker = require('faker');
+
 module.exports = {
-  up: (queryInterface, Sequelize) =>
-    queryInterface.bulkInsert('tutorials', [
-      {
-        title: 'Something about HTML in this title',
-        content: 'Something here',
+  up: (queryInterface, Sequelize) => {
+    const tutorials = [];
+    for (let i = 0; i <= 20; i++) {
+      const fakeTutorial = {
+        title: faker.lorem.sentence(),
+        content: faker.lorem.paragraph(),
         categoryId: 1,
         userId: 1,
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      }, {
-        title: 'Something about CSS in this title',
-        content: 'Something here',
-        categoryId: 2,
-        userId: 1,
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      },
-      {
-        title: 'Nifty CSS Trick',
-        content: 'Something here',
-        categoryId: 2,
-        userId: 2,
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      },
-    ]),
-
+        createdAt: faker.date.recent(),
+        updatedAt: faker.date.recent(),
+      };
+      tutorials.push(fakeTutorial);
+    }
+    console.log(tutorials);
+    queryInterface.bulkInsert('tutorials', tutorials);
+  },
   down: (queryInterface, Sequelize) => queryInterface.bulkDelete('tutorials', null, {}),
 };

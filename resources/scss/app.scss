@@ -10,6 +10,12 @@
 @import "components/navigation";
 @import "components/footer";
 
+// Modals
+@import "modals/auth";
+@import "modals/search";
+
+// Plugins
+@import "plugins/parsley";
 
 // Pages
 @import "pages/home";

@@ -3,16 +3,11 @@ module.exports = {
 
     queryInterface.bulkInsert('categories', [
       {
-        name: 'HTML',
+        name: 'MongoDB',
         createdAt: new Date(),
         updatedAt: new Date(),
       }, {
-        name: 'CSS',
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      },
-      {
-        name: 'JavaScript',
+        name: 'ExpressJS',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
@@ -22,12 +17,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
-        name: 'Vue',
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      },
-      {
-        name: 'Angular',
+        name: 'NodeJs',
         createdAt: new Date(),
         updatedAt: new Date(),
       },

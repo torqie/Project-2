@@ -842,6 +842,25 @@ try {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ./auth.js */ "./resources/js/auth.js"); // Modals
+
+
+__webpack_require__(/*! ./modals/auth-modal */ "./resources/js/modals/auth-modal.js");
+
+__webpack_require__(/*! ./modals/search-modal */ "./resources/js/modals/search-modal.js"); // Plugins
+
+
+__webpack_require__(/*! ./plugins/typewriter-logo */ "./resources/js/plugins/typewriter-logo.js");
+
+/***/ }),
+
+/***/ "./resources/js/auth.js":
+/*!******************************!*\
+  !*** ./resources/js/auth.js ***!
+  \******************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -931,6 +950,64 @@ $('#register-form').submit( /*#__PURE__*/function () {
     return _ref2.apply(this, arguments);
   };
 }());
+
+/***/ }),
+
+/***/ "./resources/js/modals/auth-modal.js":
+/*!*******************************************!*\
+  !*** ./resources/js/modals/auth-modal.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  $('#auth-tabs a').on('click', function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+  });
+  $('.auth-modal-link').on('click', function () {
+    // Find which button was clicked, so we know which tab to target
+    var tabTarget = $(this).data('tab'); // Manually show the modal, since we are not doing it via data-toggle now
+
+    $('#auth-modal').modal('show'); // Now show the selected tab
+
+    $(".nav-tabs a[href=\"#".concat(tabTarget, "\"]")).tab('show');
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/modals/search-modal.js":
+/*!*********************************************!*\
+  !*** ./resources/js/modals/search-modal.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  $('#search-modal-button').on('click', function () {
+    $('#search-modal').modal('show');
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/plugins/typewriter-logo.js":
+/*!*************************************************!*\
+  !*** ./resources/js/plugins/typewriter-logo.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  AOS.init();
+  var logo = document.getElementById('logo');
+  var typewriter = new Typewriter(logo, {
+    loop: false,
+    cursor: '_'
+  });
+  typewriter.typeString('<span class="blue">gitSum</span>').typeString('<span class="gray">(</span>').typeString('<span class="red">money</span>').pauseFor(500).deleteChars(5).pauseFor(500).typeString('<span class="red">education').typeString('<span class="gray">)').start();
+});
 
 /***/ }),
 
