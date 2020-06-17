@@ -2,7 +2,7 @@
   font-family: 'Ubuntu Mono', monospace;
 }
 
-h1, h2, h3, h4, h5, h6, label, .btn {
+h1, h2, h4, h5, h6, label, .btn {
   text-transform: uppercase;
 }
 
@@ -128,5 +128,20 @@ textarea.parsley-error {
       background-color: #f6f6f6;
       transition: all 0.4s ease-in-out;
     }
+  }
+}
+
+#noSearch {
+  color: #f6f6f6;
+  text-align: center;
+  background-color: #e3342f;
+}
+
+.skill-card-top
+  {
+  border-radius: 15px;
+    &:hover {
+      transition: all 0.4s ease-in-out;
+      box-shadow: 1px 1px 3px 1px #c1effa;
   }
 }
