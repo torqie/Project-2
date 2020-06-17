@@ -15,7 +15,11 @@ $('#search').on('keyup', () => {
         searchResults.empty();
         console.log(response);
         if (response.length < 1) {
-          const blah = $(`<li><h3 class="noSearch">No Search Results Found</h3></li>`);
+          const blah = $(`<li><h3 style=
+          "color: #f6f6f6;
+          text-align: center;
+          background-color: #e3342f;
+          ">No Search Results Found</h3></li>`);
           blah.appendTo(searchResults);
         }
         // push li's to the modal
