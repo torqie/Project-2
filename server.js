@@ -8,16 +8,14 @@ const flash = require('connect-flash');
 const path = require('path');
 const db = require('./models');
 
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(express.static('public'));
 app.use(cookieParser());
-
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Handlebars
 app.engine('hbs', exphbs({
@@ -34,7 +32,6 @@ app.use(session({ secret: 'tmNabHUTjPyAiJIIXlHOZLVNGM' }));
 app.use(passport.initialize());
 app.use(passport.session({ cookie: { maxAge: 60000 } }));
 app.use(flash());
-
 require('./config/passport');
 
 passport.serializeUser((user, done) => {
