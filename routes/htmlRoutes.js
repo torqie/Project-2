@@ -12,8 +12,10 @@ module.exports = function (app) {
 
   app.get('/tutorials/create', ensureLoggedIn('/'), async (req, res) => {
     // const users = await db.User.findAll();
+    const categories = await db.Category.findAll();
     res.render('tutorials/create', {
       user: req.user,
+      categories: categories,
     });
   });
   // Load example page and pass in an example by id

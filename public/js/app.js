@@ -853,7 +853,10 @@ __webpack_require__(/*! ./modals/auth-modal */ "./resources/js/modals/auth-modal
 __webpack_require__(/*! ./modals/search-modal */ "./resources/js/modals/search-modal.js"); // Plugins
 
 
-__webpack_require__(/*! ./plugins/typewriter-logo */ "./resources/js/plugins/typewriter-logo.js");
+__webpack_require__(/*! ./plugins/typewriter-logo */ "./resources/js/plugins/typewriter-logo.js"); // Pages
+
+
+__webpack_require__(/*! ./pages/tutorials */ "./resources/js/pages/tutorials.js");
 
 /***/ }),
 
@@ -988,6 +991,19 @@ $(document).ready(function () {
   $('#search-modal-button').on('click', function () {
     $('#search-modal').modal('show');
   });
+});
+
+/***/ }),
+
+/***/ "./resources/js/pages/tutorials.js":
+/*!*****************************************!*\
+  !*** ./resources/js/pages/tutorials.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var simplemde = new SimpleMDE({
+  element: document.getElementById('content')
 });
 
 /***/ }),

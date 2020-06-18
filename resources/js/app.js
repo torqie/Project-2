@@ -6,3 +6,6 @@ require('./modals/search-modal');
 
 // Plugins
 require('./plugins/typewriter-logo');
+
+// Pages
+require('./pages/tutorials');
