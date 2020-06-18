@@ -952,8 +952,8 @@ $('#register-form').submit( /*#__PURE__*/function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/terikhone/bootcamp/projects/project-2/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/terikhone/bootcamp/projects/project-2/resources/scss/app.scss */"./resources/scss/app.scss");
+__webpack_require__(/*! C:\School\project2\project-2\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\School\project2\project-2\resources\scss\app.scss */"./resources/scss/app.scss");
 
 
 /***/ })

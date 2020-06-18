@@ -11222,12 +11222,11 @@ a.text-accent:focus {
 }
 
 .btn {
-  font-family: 'Ubuntu Mono', monospace;
+  font-family: "Ubuntu Mono", monospace;
 }
 
 h1,
 h2,
-h3,
 h4,
 h5,
 h6,
@@ -11238,21 +11237,21 @@ label,
 
 label {
   color: #808080;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 #logo {
-  font-family: 'Ubuntu Mono', monospace;
+  font-family: "Ubuntu Mono", monospace;
   font-size: 2rem;
   text-transform: initial;
 }
 
 #logo .blue {
-  color: #5FA4E8;
+  color: #5fa4e8;
 }
 
 #logo .red {
-  color: #D86D74;
+  color: #d86d74;
 }
 
 #logo .gray {
@@ -11274,16 +11273,16 @@ input.parsley-success,
 select.parsley-success,
 textarea.parsley-success {
   color: #468847;
-  background-color: #DFF0D8;
-  border: 1px solid #D6E9C6;
+  background-color: #dff0d8;
+  border: 1px solid #d6e9c6;
 }
 
 input.parsley-error,
 select.parsley-error,
 textarea.parsley-error {
-  color: #B94A48;
-  background-color: #F2DEDE;
-  border: 1px solid #EED3D7;
+  color: #b94a48;
+  background-color: #f2dede;
+  border: 1px solid #eed3d7;
 }
 
 .parsley-errors-list {
@@ -11293,11 +11292,11 @@ textarea.parsley-error {
   font-size: 0.9em;
   line-height: 0.9em;
   opacity: 0;
-  color: #B94A48;
-  transition: all .3s ease-in;
-  -o-transition: all .3s ease-in;
-  -moz-transition: all .3s ease-in;
-  -webkit-transition: all .3s ease-in;
+  color: #b94a48;
+  transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
 }
 
 .parsley-errors-list.filled {
@@ -11353,12 +11352,45 @@ textarea.parsley-error {
 
 #search-results li a p {
   margin: 0;
-  font-size: .75rem;
+  font-size: 0.75rem;
 }
 
 #search-results li:hover {
   background-color: #f6f6f6;
   transition: all 0.4s ease-in-out;
+}
+
+#noSearch {
+  color: #f6f6f6;
+  text-align: center;
+  background-color: #e3342f;
+}
+
+.skill-card-top {
+  border-radius: 15px;
+}
+
+.skill-card-top:hover {
+  transition: all 0.4s ease-in-out;
+  box-shadow: 1px 1px 5px 1px #c1effa;
+}
+
+.card-img {
+  border-radius: 15px;
+}
+
+.card-img:hover {
+  transition: all 0.4s ease-in-out;
+  box-shadow: 1px 1px 5px 1px #c1effa;
+}
+
+.navbar-toggler {
+  border-radius: 5px;
+}
+
+.navbar-toggler:hover {
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0px 0px 3px 0px #c1effa;
 }
 
 .navbar {
