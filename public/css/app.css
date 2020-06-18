@@ -11582,7 +11582,7 @@ a.text-accent:focus {
 }
 
 .btn {
-  font-family: 'Ubuntu Mono', monospace;
+  font-family: "Ubuntu Mono", monospace;
 }
 
 h1,
@@ -11598,7 +11598,7 @@ label,
 
 label {
   color: #808080;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .list-group-item {
@@ -11612,28 +11612,37 @@ label {
   box-shadow: none;
 }
 
-#logo {
-  font-family: 'Ubuntu Mono', monospace;
-  font-size: 2rem;
-  text-transform: initial;
+#noSearch {
+  color: #f6f6f6;
+  text-align: center;
+  background-color: #e3342f;
 }
 
-#logo .blue {
-  color: #5FA4E8;
+.skill-card-top {
+  border-radius: 15px;
 }
 
-#logo .red {
-  color: #D86D74;
+.skill-card-top:hover {
+  transition: all 0.4s ease-in-out;
+  box-shadow: 1px 1px 5px 1px #c1effa;
 }
 
-#logo .gray {
-  color: #606060;
+.card-img {
+  border-radius: 15px;
 }
 
-@media screen and (max-width: 768px) {
-  #logo {
-    font-size: 1.55rem;
-  }
+.card-img:hover {
+  transition: all 0.4s ease-in-out;
+  box-shadow: 1px 1px 5px 1px #c1effa;
+}
+
+.navbar-toggler {
+  border-radius: 5px;
+}
+
+.navbar-toggler:hover {
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0px 0px 3px 0px #c1effa;
 }
 
 .navbar {
