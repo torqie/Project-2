@@ -27,8 +27,9 @@ exports.findOne = async (req, res) => {
 exports.create = async (req, res) => {
   const category = await db.Category.findByPk(req.body.categoryId);
   const tutorial = new db.Tutorial({
-    UserId: req.user,
+    UserId: req.user.id,
     CategoryId: req.body.categoryId,
+    description: req.body.description,
     title: req.body.title,
     content: req.body.content,
   });

@@ -991,6 +991,36 @@ $(document).ready(function () {
   $('#search-modal-button').on('click', function () {
     $('#search-modal').modal('show');
   });
+  var searchResults = $('#search-results');
+  var keyTimer;
+  $('#search').on('keyup', function () {
+    clearTimeout(keyTimer);
+
+    if ($('#search').val().length >= 3) {
+      keyTimer = setTimeout(function () {
+        console.log("/api/search?q=".concat($('#search').val()));
+        $.ajax({
+          url: "/api/search?q=".concat($('#search').val()),
+          method: 'GET',
+          timeout: 0
+        }).done(function (response) {
+          searchResults.empty();
+
+          if (response.length < 1) {
+            var blah = $('<li><h3 id="noSearch">No Search Results Found</h3></li>');
+            blah.appendTo(searchResults);
+          } // push li's to the modal
+
+
+          for (var i = 0; i < response.length; i++) {
+            var _blah = $("\n          <li>\n            <a href='/tutorial/".concat(response[i].id, "' class=\"row\">\n            <span class=\"col-9\">\n              <h6>").concat(response[i].title, "</h6>\n              <p>").concat(response[i].description, "</p>\n            </span>\n              <span class=\"col-3 text-right\">\n              <button class=\"btn btn-sm btn-primary\">Mongo DB</button>\n              </span>\n              \n            </a>\n          </li>"));
+
+            _blah.appendTo(searchResults);
+          }
+        });
+      }, 500);
+    }
+  });
 });
 
 /***/ }),
@@ -1004,6 +1034,21 @@ $(document).ready(function () {
 
 var simplemde = new SimpleMDE({
   element: document.getElementById('content')
+});
+$('#create-tutorial').submit(function (event) {
+  event.preventDefault();
+  $.ajax({
+    url: '/api/tutorials/',
+    method: 'POST',
+    data: {
+      title: $('#title').val(),
+      description: $('#description').val(),
+      content: simplemde.options.previewRender($('#content').val()),
+      categoryId: $('#category').val()
+    }
+  }).done(function (data) {
+    console.log(data);
+  });
 });
 
 /***/ }),

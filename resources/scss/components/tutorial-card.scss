@@ -1,0 +1,40 @@
+.tutorial-card {
+  .card {
+    .tutorial-type {
+      width: 100%;
+      height: 100%;
+      &.mongo { background: #66D76A }
+      &.express { background: #bd3d3d }
+      &.react { background: #228cff}
+      &.node { background: #EEDD66}
+    }
+
+    img {
+      position: relative;
+      left: -6px;
+    }
+    .card-title {
+      font-size: 1rem;
+    }
+    .card-body {
+      height: 100%;
+      padding: 15px 15px 0 15px;
+      .card-text {
+        font-size: .60rem;
+      }
+      .footer{
+        position: relative;
+        font-size: .7rem;
+        border-top: 1px solid #eeeeee;
+        color: #656464;
+        a {
+          color: #656464;
+          &:hover {
+            color: #D96F76;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}

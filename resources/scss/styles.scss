@@ -39,25 +39,25 @@ label {
 
 .skill-card-top {
   border-radius: 15px;
+  box-shadow: 0 2px 4px 0 #b5b5b5;
+  transition: transform 0.4s;
   &:hover {
-    transition: all 0.4s ease-in-out;
-    box-shadow: 1px 1px 5px 1px #c1effa;
+    transform: translate(0px, -5px);
   }
 }
 
-.card-img {
-  border-radius: 15px;
-  &:hover {
-    transition: all 0.4s ease-in-out;
-    box-shadow: 1px 1px 5px 1px #c1effa;
-  }
+#logo {
+  font-family: 'Ubuntu Mono', monospace;;
+  font-size: 2rem;
+  text-transform: initial;
+  .blue {color: #5FA4E8}
+  .red {color: #D86D74}
+  .gray {color: #606060}
 }
 
-.navbar-toggler {
-  border-radius: 5px;
-  &:hover {
-    transition: all 0.4s ease-in-out;
-    box-shadow: 0px 0px 3px 0px #c1effa;
+@media screen and (max-width: 768px) {
+  #logo {
+    font-size: 1.5rem;
   }
 }
 

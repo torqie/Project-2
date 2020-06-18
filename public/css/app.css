@@ -11620,29 +11620,36 @@ label {
 
 .skill-card-top {
   border-radius: 15px;
+  box-shadow: 0 2px 4px 0 #b5b5b5;
+  transition: transform 0.4s;
 }
 
 .skill-card-top:hover {
-  transition: all 0.4s ease-in-out;
-  box-shadow: 1px 1px 5px 1px #c1effa;
+  transform: translate(0px, -5px);
 }
 
-.card-img {
-  border-radius: 15px;
+#logo {
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 2rem;
+  text-transform: initial;
 }
 
-.card-img:hover {
-  transition: all 0.4s ease-in-out;
-  box-shadow: 1px 1px 5px 1px #c1effa;
+#logo .blue {
+  color: #5FA4E8;
 }
 
-.navbar-toggler {
-  border-radius: 5px;
+#logo .red {
+  color: #D86D74;
 }
 
-.navbar-toggler:hover {
-  transition: all 0.4s ease-in-out;
-  box-shadow: 0px 0px 3px 0px #c1effa;
+#logo .gray {
+  color: #606060;
+}
+
+@media screen and (max-width: 768px) {
+  #logo {
+    font-size: 1.5rem;
+  }
 }
 
 .navbar {
@@ -11773,6 +11780,100 @@ label {
 
 footer {
   margin-top: 60px;
+  background: #1d68a7;
+  min-height: 300px;
+}
+
+.skill-card .skill-card-top {
+  border-radius: 15px;
+  box-shadow: 0 2px 4px 0 #b5b5b5;
+  transition: transform 0.4s;
+}
+
+.skill-card .skill-card-top:hover {
+  transform: translate(0px, -5px);
+}
+
+.skill-card .card-img {
+  border-radius: 15px;
+}
+
+.skill-card .skill-card-meta {
+  padding: 13px 0 5px 0;
+  border: 1px solid #fff;
+  border-top: 0;
+  -o-border-image: url(/images/long-dash-border.svg) 1 round;
+  border-image: url(/images/long-dash-border.svg) 1 round;
+  position: relative;
+  top: -4px;
+  color: #666464;
+}
+
+.skill-card .skill-card-meta span {
+  color: #ababab;
+  font-size: .6rem;
+  line-height: .6rem;
+  position: relative;
+  top: -6px;
+}
+
+.skill-card .skill-card-meta .tutorials {
+  border-right: 1px solid #dadada;
+}
+
+.tutorial-card .card .tutorial-type {
+  width: 100%;
+  height: 100%;
+}
+
+.tutorial-card .card .tutorial-type.mongo {
+  background: #66D76A;
+}
+
+.tutorial-card .card .tutorial-type.express {
+  background: #bd3d3d;
+}
+
+.tutorial-card .card .tutorial-type.react {
+  background: #228cff;
+}
+
+.tutorial-card .card .tutorial-type.node {
+  background: #EEDD66;
+}
+
+.tutorial-card .card img {
+  position: relative;
+  left: -6px;
+}
+
+.tutorial-card .card .card-title {
+  font-size: 1rem;
+}
+
+.tutorial-card .card .card-body {
+  height: 100%;
+  padding: 15px 15px 0 15px;
+}
+
+.tutorial-card .card .card-body .card-text {
+  font-size: .60rem;
+}
+
+.tutorial-card .card .card-body .footer {
+  position: relative;
+  font-size: .7rem;
+  border-top: 1px solid #eeeeee;
+  color: #656464;
+}
+
+.tutorial-card .card .card-body .footer a {
+  color: #656464;
+}
+
+.tutorial-card .card .card-body .footer a:hover {
+  color: #D96F76;
+  text-decoration: none;
 }
 
 .nav-tabs .nav-link,
@@ -11917,83 +12018,5 @@ textarea.parsley-error {
 
 #home #learn-mern {
   margin-top: 100px;
-}
-
-#home #learn-mern .skill-card .skill-card-meta {
-  padding: 13px 0 5px 0;
-  border: 1px solid #fff;
-  border-top: 0;
-  -o-border-image: url(/images/long-dash-border.svg) 1 round;
-  border-image: url(/images/long-dash-border.svg) 1 round;
-  position: relative;
-  top: -4px;
-  color: #666464;
-}
-
-#home #learn-mern .skill-card .skill-card-meta span {
-  color: #ababab;
-  font-size: .6rem;
-  line-height: .6rem;
-  position: relative;
-  top: -6px;
-}
-
-#home #learn-mern .skill-card .skill-card-meta .tutorials {
-  border-right: 1px solid #dadada;
-}
-
-#home .tutorial-card .card .tutorial-type {
-  width: 100%;
-  height: 100%;
-}
-
-#home .tutorial-card .card .tutorial-type.mongo {
-  background: #66D76A;
-}
-
-#home .tutorial-card .card .tutorial-type.express {
-  background: #bd3d3d;
-}
-
-#home .tutorial-card .card .tutorial-type.react {
-  background: #228cff;
-}
-
-#home .tutorial-card .card .tutorial-type.node {
-  background: #EEDD66;
-}
-
-#home .tutorial-card .card img {
-  position: relative;
-  left: -6px;
-}
-
-#home .tutorial-card .card .card-title {
-  font-size: 1rem;
-}
-
-#home .tutorial-card .card .card-body {
-  height: 100%;
-  padding: 15px 15px 0 15px;
-}
-
-#home .tutorial-card .card .card-body .card-text {
-  font-size: .60rem;
-}
-
-#home .tutorial-card .card .card-body .footer {
-  position: relative;
-  font-size: .7rem;
-  border-top: 1px solid #eeeeee;
-  color: #656464;
-}
-
-#home .tutorial-card .card .card-body .footer a {
-  color: #656464;
-}
-
-#home .tutorial-card .card .card-body .footer a:hover {
-  color: #D96F76;
-  text-decoration: none;
 }
 
