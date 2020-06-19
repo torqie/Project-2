@@ -57,3 +57,14 @@ exports.delete = async (req, res) => {
     console.log('error: ', e);
   }
 };
+
+exports.tutorialCountByCategory = async (req, res) => {
+  const category = await db.Category.findByPk(req.params.id);
+  try {
+    db.Tutorial.count({ where: { CategoryId: req.params.id } }).then(c => {
+      res.json(c);
+    });
+  } catch (e) {
+    console.log('error: ', e);
+  }
+};

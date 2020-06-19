@@ -1,7 +1,39 @@
-<div class="col-12 col-6">
-  <div class="card">
-    <div class="card-body">
-      <h3>{{title}}</h3>
+<div class="col-12 col-md-6 tutorial-card mb-4" data-aos="fade-up">
+  <div class="card" style="max-height: 150px">
+    <div class="row no-gutters">
+
+        <div class="col-md-2">
+          <a href="/tutorials/{{this.dataValues.id}}/view">
+          <div class="tutorial-type {{this.dataValues.Category.dataValues.name}} rounded-lg"></div>
+          </a>
+        </div>
+
+      <div class="col-md-10">
+        <div class="card-body d-flex flex-column">
+          <a href="/tutorials/{{this.dataValues.id}}/view">
+            <h6 class="card-title">{{this.dataValues.title}}</h6>
+
+          </a>
+          <p class="card-text">{{this.dataValues.description}}</p>
+          <div class="footer mt-auto d-flex flex-row py-1 no-gutters">
+            <div class="col">
+              <svg class="bi bi-eye-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                <path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+              </svg>
+              {{this.dataValues.views}}
+            </div>
+            <div class="col text-right">
+              <a href="#">
+                <svg class="bi bi-person-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                </svg>
+                {{this.dataValues.User.dataValues.firstName}} {{this.dataValues.User.dataValues.lastName}}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

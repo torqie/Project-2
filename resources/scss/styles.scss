@@ -1,9 +1,33 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 240px;
+  min-height: 100%;
+
+}
+pre code {
+  white-space: pre;
+  overflow-x: auto;
+  display: inline-block;
+  min-width: 100%;
+}
+.hljs {
+  overflow-x: auto;
+  display: inline-block;
+  min-width: 100%;
+}
 .btn {
   font-family: "Ubuntu Mono", monospace;
 }
 
 h1,
 h2,
+h3,
 h4,
 h5,
 h6,
@@ -17,126 +41,17 @@ label {
   font-size: 0.9rem;
 }
 
-#logo {
-  font-family: "Ubuntu Mono", monospace;
-  font-size: 2rem;
-  text-transform: initial;
-}
-
-#logo .blue {
-  color: #5fa4e8;
-}
-
-#logo .red {
-  color: #d86d74;
-}
-
-#logo .gray {
-  color: #606060;
-}
 
 .list-group-item {
   line-height: 2.5;
 }
+
 
 .form-control:hover,
 .form-control:active,
 .form-control:focus {
   outline: none;
   box-shadow: none;
-}
-
-//.form-control {
-//  transition: all 0.5s ease-in-out;
-//  color: #50757D;
-//  box-shadow: 1px 1px 3px 1px #50757D;
-//}
-
-input.parsley-success,
-select.parsley-success,
-textarea.parsley-success {
-  color: #468847;
-  background-color: #dff0d8;
-  border: 1px solid #d6e9c6;
-}
-
-input.parsley-error,
-select.parsley-error,
-textarea.parsley-error {
-  color: #b94a48;
-  background-color: #f2dede;
-  border: 1px solid #eed3d7;
-}
-
-.parsley-errors-list {
-  margin: 2px 0 3px;
-  padding: 0;
-  list-style-type: none;
-  font-size: 0.9em;
-  line-height: 0.9em;
-  opacity: 0;
-  color: #b94a48;
-
-  transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  -moz-transition: all 0.3s ease-in;
-  -webkit-transition: all 0.3s ease-in;
-}
-
-.parsley-errors-list.filled {
-  opacity: 1;
-}
-
-.nav-tabs .nav-link,
-.nav-tabs .nav-link.active,
-.nav-tabs .nav-link:hover {
-  border-bottom: 0;
-  color: gray;
-}
-
-#auth-modal #auth-tabs .nav-item a {
-  color: #808080;
-  font-size: 1.025rem;
-  font-family: "Ubuntu Mono", sans-serif;
-  background-color: #f7f7f7;
-}
-#auth-modal #auth-tabs .nav-item a.active {
-  color: #e06c75;
-  background-color: #ffffff;
-  border-bottom: 0;
-}
-
-@media screen and (max-width: 768px) {
-  .tabs h6 {
-    font-size: 12px;
-  }
-}
-
-#search-results {
-  margin-top: 20px;
-
-  li {
-    padding: 15px;
-    border-bottom: 1px solid #f6f6f6;
-    a {
-      color: #656565;
-      &:hover {
-        text-decoration: none;
-      }
-      h6 {
-        margin: 0;
-      }
-      p {
-        margin: 0;
-        font-size: 0.75rem;
-      }
-    }
-
-    &:hover {
-      background-color: #f6f6f6;
-      transition: all 0.4s ease-in-out;
-    }
-  }
 }
 
 #noSearch {
@@ -147,24 +62,25 @@ textarea.parsley-error {
 
 .skill-card-top {
   border-radius: 15px;
+  box-shadow: 0 2px 4px 0 #b5b5b5;
+  transition: transform 0.4s;
   &:hover {
-    transition: all 0.4s ease-in-out;
-    box-shadow: 1px 1px 5px 1px #c1effa;
+    transform: translate(0px, -5px);
   }
 }
 
-.card-img {
-  border-radius: 15px;
-  &:hover {
-    transition: all 0.4s ease-in-out;
-    box-shadow: 1px 1px 5px 1px #c1effa;
+#logo {
+  font-family: 'Ubuntu Mono', monospace;;
+  font-size: 2rem;
+  text-transform: initial;
+  .blue {color: #5FA4E8}
+  .red {color: #D86D74}
+  .gray {color: #606060}
+}
+
+@media screen and (max-width: 768px) {
+  #logo {
+    font-size: 1.5rem;
   }
 }
 
-.navbar-toggler {
-  border-radius: 5px;
-  &:hover {
-    transition: all 0.4s ease-in-out;
-    box-shadow: 0px 0px 3px 0px #c1effa;
-  }
-}

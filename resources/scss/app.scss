@@ -9,7 +9,15 @@
 // Components
 @import "components/navigation";
 @import "components/footer";
+@import "components/skill-card";
+@import "components/tutorial-card";
 
+// Modals
+@import "modals/auth";
+@import "modals/search";
+
+// Plugins
+@import "plugins/parsley";
 
 // Pages
 @import "pages/home";

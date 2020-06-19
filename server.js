@@ -23,6 +23,13 @@ app.engine('hbs', exphbs({
   defaultLayout: 'main',
   layoutsDir: path.join(__dirname, 'views/layouts'),
   partialsDir: path.join(__dirname, 'views/partials'),
+  helpers: {
+    section: function(name, options) {
+      if (!this._sections) this._sections = {};
+      this._sections[name] = options.fn(this);
+      return null;
+    },
+  },
 }));
 
 app.set('view engine', 'hbs');
@@ -64,5 +71,8 @@ db.sequelize.sync(syncOptions).then(() => {
     );
   });
 });
+
+
+
 
 module.exports = app;

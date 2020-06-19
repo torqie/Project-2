@@ -1,0 +1,27 @@
+#search-results {
+  margin-top:20px;
+
+  li {
+    padding: 15px;
+    border-bottom: 1px solid #f6f6f6;
+    a {
+      color: #656565;
+      &:hover {
+        text-decoration: none;
+      }
+      h6 {
+        margin: 0;
+      }
+      p {
+        margin: 0;
+        font-size: .75rem;
+      }
+
+    }
+
+    &:hover {
+      background-color: #f6f6f6;
+      transition: all 0.4s ease-in-out;
+    }
+  }
+}

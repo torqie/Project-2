@@ -32,6 +32,10 @@ $theme-colors: (
   "accent": #f87100
 );
 
+$spacers: (
+  6: (1rem * 7)
+);
+
 // Buttons
 $btn-border-radius: .35rem;
 $btn-font-family: 'Ubuntu Mono', monospace;

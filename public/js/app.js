@@ -842,6 +842,28 @@ try {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ./auth.js */ "./resources/js/auth.js"); // Modals
+
+
+__webpack_require__(/*! ./modals/auth-modal */ "./resources/js/modals/auth-modal.js");
+
+__webpack_require__(/*! ./modals/search-modal */ "./resources/js/modals/search-modal.js"); // Plugins
+
+
+__webpack_require__(/*! ./plugins/typewriter-logo */ "./resources/js/plugins/typewriter-logo.js"); // Pages
+
+
+__webpack_require__(/*! ./pages/tutorials */ "./resources/js/pages/tutorials.js");
+
+/***/ }),
+
+/***/ "./resources/js/auth.js":
+/*!******************************!*\
+  !*** ./resources/js/auth.js ***!
+  \******************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -934,6 +956,136 @@ $('#register-form').submit( /*#__PURE__*/function () {
 
 /***/ }),
 
+/***/ "./resources/js/modals/auth-modal.js":
+/*!*******************************************!*\
+  !*** ./resources/js/modals/auth-modal.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  $('#auth-tabs a').on('click', function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+  });
+  $('.auth-modal-link').on('click', function () {
+    // Find which button was clicked, so we know which tab to target
+    var tabTarget = $(this).data('tab'); // Manually show the modal, since we are not doing it via data-toggle now
+
+    $('#auth-modal').modal('show'); // Now show the selected tab
+
+    $(".nav-tabs a[href=\"#".concat(tabTarget, "\"]")).tab('show');
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/modals/search-modal.js":
+/*!*********************************************!*\
+  !*** ./resources/js/modals/search-modal.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  $('#search-modal-button').on('click', function () {
+    $('#search-modal').modal('show');
+  });
+  $('#search-modal').on('shown.bs.modal', function () {
+    $('#search').focus();
+  });
+  var searchResults = $('#search-results');
+  var keyTimer;
+  $('#search').on('keyup', function () {
+    clearTimeout(keyTimer);
+
+    if ($('#search').val().length >= 3) {
+      keyTimer = setTimeout(function () {
+        console.log("/api/search?q=".concat($('#search').val()));
+        $.ajax({
+          url: "/api/search?q=".concat($('#search').val()),
+          method: 'GET',
+          timeout: 0
+        }).done(function (response) {
+          searchResults.empty();
+
+          if (response.length < 1) {
+            var blah = $('<li><h3 id="noSearch">No Search Results Found</h3></li>');
+            blah.appendTo(searchResults);
+          } // push li's to the modal
+
+
+          for (var i = 0; i < response.length; i++) {
+            var _blah = $("\n          <li>\n            <a href='/tutorials/".concat(response[i].id, "/view' class=\"row\">\n            <span class=\"col-9\">\n              <h6>").concat(response[i].title, "</h6>\n              <p>").concat(response[i].description, "</p>\n            </span>\n              <span class=\"col-3 text-right\">\n              <button class=\"btn btn-sm btn-primary\">Mongo DB</button>\n              </span>\n              \n            </a>\n          </li>"));
+
+            _blah.appendTo(searchResults);
+          }
+        });
+      }, 500);
+    }
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/pages/tutorials.js":
+/*!*****************************************!*\
+  !*** ./resources/js/pages/tutorials.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var simplemde = new SimpleMDE({
+  element: document.getElementById('content')
+});
+$('#create-tutorial').submit(function (event) {
+  event.preventDefault();
+  $.ajax({
+    url: '/api/tutorials/',
+    method: 'POST',
+    data: {
+      title: $('#title').val(),
+      description: $('#description').val(),
+      content: simplemde.options.previewRender($('#content').val()),
+      categoryId: $('#category').val()
+    }
+  }).done(function (data) {
+    Swal.fire({
+      icon: 'success',
+      title: 'Tutorial Successfully Created!',
+      html: "<h5 class=\"text-muted\">".concat(data.title, "</h5>"),
+      timer: 2000,
+      timerProgressBar: true
+    }).then(function (result) {
+      /* Read more about handling dismissals below */
+      if (result.dismiss === Swal.DismissReason.timer) {
+        window.location.href = '/';
+      }
+    });
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/plugins/typewriter-logo.js":
+/*!*************************************************!*\
+  !*** ./resources/js/plugins/typewriter-logo.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  AOS.init();
+  var logo = document.getElementById('logo');
+  var typewriter = new Typewriter(logo, {
+    loop: false,
+    cursor: '_'
+  });
+  typewriter.typeString('<span class="blue">gitSum</span>').typeString('<span class="gray">(</span>').typeString('<span class="red">money</span>').pauseFor(500).deleteChars(5).pauseFor(500).typeString('<span class="red">education').typeString('<span class="gray">)').start();
+});
+
+/***/ }),
+
 /***/ "./resources/scss/app.scss":
 /*!*********************************!*\
   !*** ./resources/scss/app.scss ***!
@@ -952,8 +1104,8 @@ $('#register-form').submit( /*#__PURE__*/function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\School\project2\project-2\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\School\project2\project-2\resources\scss\app.scss */"./resources/scss/app.scss");
+__webpack_require__(/*! /Users/terikhone/bootcamp/projects/project-2/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/terikhone/bootcamp/projects/project-2/resources/scss/app.scss */"./resources/scss/app.scss");
 
 
 /***/ })
