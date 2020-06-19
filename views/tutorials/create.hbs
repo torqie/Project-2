@@ -28,8 +28,31 @@
           <textarea name="content" id="content" class="form-control" rows="10"></textarea>
         </div>
         <div class="form-group text-right">
-          <button type="submit" class="btn btn-primary">Create Tutorial</button>
+          <button type="submit" class="btn btn-primary data-toggle="modal" data-target="#tutorialCreated"">Create Tutorial</button>
         </div>
+        {{!-- Button stuffs to put in class--}}
+        {{!-- data-toggle="modal" data-target="#tutorialCreated" --}}
+        {{!-- pop-up creation confirm --}}
+        <div class="modal" id="tutorialCreated">
+          <div class="modal-dialog">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h4 class="modal-title">Congratulations!</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+
+              <div class="modal-body">
+                Your tutorial creation request has been sent in for review.
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </form>
     </div>
   </div>
