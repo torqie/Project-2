@@ -1,0 +1,13 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h3>{{category}} Tutorials</h3>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+      {{#each tutorials}}
+        {{>components/tutorials/tutorial-card  this}}
+      {{/each}}
+  </div>
+</div>

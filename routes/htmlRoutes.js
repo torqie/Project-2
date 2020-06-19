@@ -37,6 +37,19 @@ module.exports = function (app) {
       tutorial: tutorial.toJSON(),
     });
   });
+
+  app.get('/categories/:name/', async (req, res) => {
+    const category = await db.Category.findOne({ where: { name: req.params.name } });
+    const tutorial = await db.Tutorial.findAll({
+      where: { categoryId: category.id },
+      include: [db.User, db.Category],
+    });
+    res.render('categories/index', {
+      user: req.user,
+      category: req.params.name,
+      tutorials: tutorial,
+    });
+  });
   // Render 404 page for any unmatched routes
   app.get('*', (req, res) => {
     res.render('404', {

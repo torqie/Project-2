@@ -2,7 +2,10 @@ const db = require('../models');
 
 // Get All Tutorials
 exports.findAll = async (req, res) => {
-  const tutorials = await db.Tutorial.findAll({ include: db.User });
+  const tutorials = await db.Tutorial.findAll({
+    limit: parseInt(req.query.limit) || 10,
+    include: db.User,
+  });
   if (req.params.categoryId) {
     tutorials = await db.Tutorial.findAll({
       where: {
