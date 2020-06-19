@@ -6,6 +6,7 @@ const db = require('../models');
 module.exports = function (app) {
   app.get('/', async (req, res) => {
     const topTutorials = await db.Tutorial.findAll({
+      limit: 6,
       order: [
         // Will escape title and validate DESC against a list of valid direction parameters
         ['views', 'DESC'],
