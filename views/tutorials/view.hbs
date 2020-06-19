@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12">
+      <h3 class="mb-n2">{{tutorial.title}}</h3>
+      <small class="mt-0">
+        Author: <span class="text-primary">{{tutorial.User.firstName}} {{tutorial.User.lastName}}</span>
+        Category: <span class="text-primary">{{tutorial.Category.name}}</span>
+        Total Views: <span id="tutorial-views" class="text-primary">{{tutorial.views}}</span>
+      </small>
+      <hr />
+      {{{tutorial.content}}}
+    </div>
+  </div>
+</div>
+
+{{#section 'script'}}
+
+  <script type="application/javascript">
+    $(document).ready(function(){
+      $.ajax({
+        url: '/api/tutorials/{{tutorial.id}}/add-view',
+        method: 'PUT',
+      }).done((data) => {
+        $('#tutorial-views').html(data)
+      });
+    });
+
+  </script>
+
+{{/section}}

@@ -1,3 +1,26 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 240px;
+  min-height: 100%;
+
+}
+pre code {
+  white-space: pre;
+  overflow-x: auto;
+  display: inline-block;
+  min-width: 100%;
+}
+.hljs {
+  overflow-x: auto;
+  display: inline-block;
+  min-width: 100%;
+}
 .btn {
   font-family: "Ubuntu Mono", monospace;
 }

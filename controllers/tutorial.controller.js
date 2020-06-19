@@ -14,6 +14,26 @@ exports.findAll = async (req, res) => {
   res.json(tutorials);
 };
 
+// Get All Tutorials
+exports.topTutorialsByViews = async (req, res) => {
+  let tutorials = await db.Tutorial.findAll({
+    order: [
+      // Will escape title and validate DESC against a list of valid direction parameters
+      ['views', 'DESC'],
+    ],
+    include: db.User,
+  });
+  if (req.params.categoryId) {
+    tutorials = await db.Tutorial.findAll({
+      where: {
+        CategoryId: req.params.categoryId,
+      },
+      include: db.User,
+    });
+  }
+  res.json(tutorials);
+};
+
 // Get All Tutorials By Category
 exports.findOne = async (req, res) => {
   const tutorial = await db.Tutorial.findOne({
@@ -25,7 +45,6 @@ exports.findOne = async (req, res) => {
 
 // Create A Tutorial
 exports.create = async (req, res) => {
-  const category = await db.Category.findByPk(req.body.categoryId);
   const tutorial = new db.Tutorial({
     UserId: req.user.id,
     CategoryId: req.body.categoryId,
@@ -36,6 +55,7 @@ exports.create = async (req, res) => {
   try {
     await tutorial.save();
     res.status(201).json(tutorial);
+    tutorial.reload();
   } catch (e) {
     console.log('error: ', e);
   }
@@ -65,3 +85,14 @@ exports.delete = async (req, res) => {
     console.log('error: ', e);
   }
 };
+
+exports.addView = async (req, res) => {
+  const tutorial = await db.Tutorial.findByPk(req.params.id);
+  await tutorial.increment({ views: 1 });
+  await tutorial.reload();
+  res.json(tutorial.views);
+};
+
+
+
+

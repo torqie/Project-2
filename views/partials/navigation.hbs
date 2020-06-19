@@ -34,31 +34,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="servicesDropdown">
           <div class="d-md-flex align-items-start justify-content-start">
-
-            <div>
-              <div class="dropdown-header">Development</div>
-              <a class="dropdown-item" href="#">Bespoke software</a>
-              <a class="dropdown-item" href="#">Mobile apps</a>
-              <a class="dropdown-item" href="#">Websites</a>
-            </div>
-
-            <div>
-              <div class="dropdown-header">Professional Services</div>
-              <a class="dropdown-item" href="#">Project rescue</a>
-              <a class="dropdown-item" href="#">Source code recovery</a>
-              <a class="dropdown-item" href="#">Application support &amp; maintenance</a>
-            </div>
-
-            <div>
-              <div class="dropdown-header">Fixed Price Services</div>
-              <a class="dropdown-item" href="#">Add cookie consent</a>
-              <a class="dropdown-item" href="#">Add captcha</a>
-              <a class="dropdown-item" href="#">Add core data</a>
-              <a class="dropdown-item" href="#">Custom error pages</a>
-              <a class="dropdown-item" href="#">Contact form creation</a>
-              <a class="dropdown-item" href="#">Automated backups</a>
-              <a class="dropdown-item" href="#">Image to HTML</a>
-            </div>
+            <div id="nav-bar-categories"></div>
           </div>
         </div>
       </li>
@@ -91,4 +67,17 @@
 
 </nav>
 
+{{#section 'navigationScript'}}
 
+  <script type="application/javascript">
+    $(document).ready(function() {
+      $.get('/api/categories', function(data) {
+        for(let i=0; i <= data.length; i++) {
+          const category = data[i];
+          $('#nav-bar-categories').append(`<a class="dropdown-item" href="/categories/${category.name.toLowerCase()}">${category.name}</a>`);
+        }
+      });
+    });
+  </script>
+
+{{/section}}

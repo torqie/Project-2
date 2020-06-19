@@ -991,6 +991,9 @@ $(document).ready(function () {
   $('#search-modal-button').on('click', function () {
     $('#search-modal').modal('show');
   });
+  $('#search-modal').on('shown.bs.modal', function () {
+    $('#search').focus();
+  });
   var searchResults = $('#search-results');
   var keyTimer;
   $('#search').on('keyup', function () {
@@ -1013,7 +1016,7 @@ $(document).ready(function () {
 
 
           for (var i = 0; i < response.length; i++) {
-            var _blah = $("\n          <li>\n            <a href='/tutorial/".concat(response[i].id, "' class=\"row\">\n            <span class=\"col-9\">\n              <h6>").concat(response[i].title, "</h6>\n              <p>").concat(response[i].description, "</p>\n            </span>\n              <span class=\"col-3 text-right\">\n              <button class=\"btn btn-sm btn-primary\">Mongo DB</button>\n              </span>\n              \n            </a>\n          </li>"));
+            var _blah = $("\n          <li>\n            <a href='/tutorials/".concat(response[i].id, "/view' class=\"row\">\n            <span class=\"col-9\">\n              <h6>").concat(response[i].title, "</h6>\n              <p>").concat(response[i].description, "</p>\n            </span>\n              <span class=\"col-3 text-right\">\n              <button class=\"btn btn-sm btn-primary\">Mongo DB</button>\n              </span>\n              \n            </a>\n          </li>"));
 
             _blah.appendTo(searchResults);
           }
@@ -1047,7 +1050,18 @@ $('#create-tutorial').submit(function (event) {
       categoryId: $('#category').val()
     }
   }).done(function (data) {
-    console.log(data);
+    Swal.fire({
+      icon: 'success',
+      title: 'Tutorial Successfully Created!',
+      html: "<h5 class=\"text-muted\">".concat(data.title, "</h5>"),
+      timer: 2000,
+      timerProgressBar: true
+    }).then(function (result) {
+      /* Read more about handling dismissals below */
+      if (result.dismiss === Swal.DismissReason.timer) {
+        window.location.href = '/';
+      }
+    });
   });
 });
 

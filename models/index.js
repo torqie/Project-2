@@ -15,6 +15,11 @@ if (config.use_env_variable) {
     config.username,
     config.password,
     {
+      define: {
+        charset: 'utf8',
+        collate: 'utf8_general_ci',
+        timestamps: true,
+      },
       port: config.port || 3307,
       dialect: config.dialect,
     },

@@ -22,6 +22,7 @@ exports.register = async (req, res) => {
     });
     try {
       await user.save();
+      user.reload();
       req.login(user, (err) => {
         if (err) { return err; }
         res.status(201).json(user);

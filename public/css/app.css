@@ -11581,6 +11581,31 @@ a.text-accent:focus {
   }
 }
 
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 240px;
+  min-height: 100%;
+}
+
+pre code {
+  white-space: pre;
+  overflow-x: auto;
+  display: inline-block;
+  min-width: 100%;
+}
+
+.hljs {
+  overflow-x: auto;
+  display: inline-block;
+  min-width: 100%;
+}
+
 .btn {
   font-family: "Ubuntu Mono", monospace;
 }
@@ -11779,9 +11804,13 @@ label {
 }
 
 footer {
-  margin-top: 60px;
+  margin-top: 160px;
   background: #1d68a7;
-  min-height: 300px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  min-height: 200px;
+  width: 100%;
 }
 
 .skill-card .skill-card-top {
@@ -11826,19 +11855,19 @@ footer {
   height: 100%;
 }
 
-.tutorial-card .card .tutorial-type.mongo {
+.tutorial-card .card .tutorial-type.Mongo {
   background: #66D76A;
 }
 
-.tutorial-card .card .tutorial-type.express {
+.tutorial-card .card .tutorial-type.Express {
   background: #bd3d3d;
 }
 
-.tutorial-card .card .tutorial-type.react {
+.tutorial-card .card .tutorial-type.React {
   background: #228cff;
 }
 
-.tutorial-card .card .tutorial-type.node {
+.tutorial-card .card .tutorial-type.Node {
   background: #EEDD66;
 }
 
@@ -11854,6 +11883,10 @@ footer {
 .tutorial-card .card .card-body {
   height: 100%;
   padding: 15px 15px 0 15px;
+}
+
+.tutorial-card .card .card-body a {
+  color: #656464;
 }
 
 .tutorial-card .card .card-body .card-text {

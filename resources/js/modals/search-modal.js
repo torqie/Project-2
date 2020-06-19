@@ -3,6 +3,10 @@ $(document).ready(() => {
     $('#search-modal').modal('show');
   });
 
+  $('#search-modal').on('shown.bs.modal', function() {
+    $('#search').focus();
+  })
+
   const searchResults = $('#search-results');
 
   let keyTimer;
@@ -25,7 +29,7 @@ $(document).ready(() => {
           for (let i = 0; i < response.length; i++) {
             const blah = $(`
           <li>
-            <a href='/tutorial/${response[i].id}' class="row">
+            <a href='/tutorials/${response[i].id}/view' class="row">
             <span class="col-9">
               <h6>${response[i].title}</h6>
               <p>${response[i].description}</p>
