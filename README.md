@@ -36,6 +36,6 @@ _**gitSum(education)**_ was an idea that was created within our group with the p
 5. Make tutorial cards equal height
 6. Make the search a full-text search
 
-_**Now...please grab a cold Monster and enjoy a guided tour of our project! We appreciate your time!**_ Follow the link below:
+_**Now...please grab a cold Monster and enjoy our project! We appreciate your time!**_ Follow the link below:
 
 [gitSum(education)](https://uofu-project-2.herokuapp.com/)
