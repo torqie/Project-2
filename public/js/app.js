@@ -1054,7 +1054,8 @@ $('#create-tutorial').submit(function (event) {
       icon: 'success',
       title: 'Tutorial Successfully Created!',
       html: "<h5 class=\"text-muted\">".concat(data.title, "</h5>"),
-      timer: 2000,
+      timer: 1500,
+      showConfirmButton: false,
       timerProgressBar: true
     }).then(function (result) {
       /* Read more about handling dismissals below */
