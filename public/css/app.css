@@ -11809,8 +11809,16 @@ footer {
   position: absolute;
   bottom: 0;
   left: 0;
-  min-height: 200px;
   width: 100%;
+  color: #dadada;
+}
+
+footer a {
+  color: #dadada;
+}
+
+footer a:hover {
+  color: #e7e7e7;
 }
 
 .skill-card .skill-card-top {

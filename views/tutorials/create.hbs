@@ -6,14 +6,15 @@
   </div>
   <div class="row">
     <div class="col-12">
-      <form id="create-tutorial">
+      <form id="create-tutorial" data-parsley-validate>
         <div class="form-group">
           <label for="title">Title:</label>
-          <input type="text" class="form-control" id="title" placeholder="Tutorial Title">
+          <input type="text" class="form-control" id="title" placeholder="Tutorial Title" data-parsley-maxlength="255" required>
         </div>
         <div class="form-group">
           <label for="category">Tutorial Category</label>
-          <select class="form-control" id="category">
+          <select class="form-control" id="category" required>
+            <option value="">Select A Category...</option>
             {{#each categories}}
               <option value="{{this.dataValues.id}}">{{this.dataValues.name}}</option>
             {{/each}}
@@ -21,11 +22,11 @@
         </div>
         <div class="form-group">
           <label for="description">Short Description:</label>
-          <textarea name="description" id="description" class="form-control"  rows="5"></textarea>
+          <textarea name="description" id="description" class="form-control"  rows="5" data-parsley-maxlength="350" required></textarea>
         </div>
         <div class="form-group">
           <label for="content">Tutorial Content:</label>
-          <textarea name="content" id="content" class="form-control" rows="10"></textarea>
+          <textarea name="content" id="content" class="form-control" rows="10" required></textarea>
         </div>
         <div class="form-group text-right">
           <button type="submit" class="btn btn-primary">Create Tutorial</button>

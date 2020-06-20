@@ -3,21 +3,21 @@ const db = require('../models');
 // Total Views
 exports.totalViews = async (req, res) => {
   db.Tutorial.sum('views').then((viewsCount) => {
-    res.json(viewsCount);
+    res.json(viewsCount || 0);
   });
 };
 
 // Total Tutorials
 exports.totalTutorials = async (req, res) => {
   db.Tutorial.count().then((tutorialCount) => {
-    res.json(tutorialCount);
+    res.json(tutorialCount || 0);
   });
 };
 
 // Total Users
 exports.totalUsers = async (req, res) => {
   db.User.count().then((userCount) => {
-    res.json(userCount);
+    res.json(userCount || 0);
   });
 };
 
