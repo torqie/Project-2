@@ -20,7 +20,7 @@ if (config.use_env_variable) {
         collate: 'utf8_general_ci',
         timestamps: true,
       },
-      port: config.port || 3307,
+      port: config.port || 3306,
       dialect: config.dialect,
     },
   );
