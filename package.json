@@ -45,7 +45,7 @@
     "eslint-config-prettier": "^4.3.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-prettier": "^3.1.0",
-    "handlebars": "^4.7.6",
+    "handlebars": "^4.7.7",
     "laravel-mix": "^5.0.4",
     "mocha": "^6.1.4",
     "node-sass": "^4.14.1",
